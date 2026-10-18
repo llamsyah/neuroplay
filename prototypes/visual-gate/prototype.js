@@ -1,7 +1,9 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { REGIONS, SURFACE_REGIONS, HIPPOCAMPUS, REGION_BY_ID, SURFACE_BY_NODE, validateSelectableAnatomy } from './anatomy.js';
+import { SURFACE_REGIONS, HIPPOCAMPUS, REGION_BY_ID, SURFACE_BY_NODE, validateSelectableAnatomy } from './anatomy.js';
+import { mountIcons, icon } from './icons.js';
+import { createAnatomyNavigator, locationFor } from './navigation.js';
 import { pickSupportedRegion, createGestureGuard, createSelectionHistory, interpolateOrbit } from './interaction.js';
 
 // Isolated prototype only. Source anatomy and production code remain unchanged.
@@ -30,13 +32,12 @@ const selected = (mesh) => activeId === HIPPOCAMPUS.id
   ? (side === 'both' ? HIPPOCAMPUS.nodes : manifest.hippocampusNodes[side]).includes(mesh.name)
   : Boolean(active()?.nodes.includes(mesh.name));
 
-for (const [selector, entries] of [['#home-region', SURFACE_REGIONS], ['#explorer-region', REGIONS]]) {
-  for (const region of entries) {
-    const option = document.createElement('option'); option.value = region.id;
-    option.textContent = region.name + (region.kind === 'internal' ? ' · bagian dalam' : '');
-    $(selector).append(option);
-  }
-}
+mountIcons();
+const navigator = createAnatomyNavigator({
+  panel: $('#anatomy-navigator'), list: $('#anatomy-list'), current: $('#navigator-current'),
+  triggers: [$('#anatomy-toggle')], closeButton: $('#navigator-close'), root: document.body,
+  onSelect: (id) => chooseRegion(id),
+});
 
 function targetBox() {
   if (activeId === HIPPOCAMPUS.id) return boxes.get(`hippocampus-${side}`);
@@ -145,8 +146,13 @@ function updateUI() {
   $('#quick-insight').hidden = !(view === 'discovery' && surface);
   $('#quick-title').textContent = surface ? region.name : '';
   $('#quick-description').textContent = surface ? region.description : '';
-  $('#home-region').value = surface ? activeId : '';
-  $('#explorer-region').value = activeId ?? '';
+  $('#experience-label').textContent = view === 'explorer' ? 'Explorer' : 'Discovery';
+  $('#quick-category').textContent = locationFor(activeId);
+  $('#region-category').textContent = locationFor(activeId, side);
+  $('#prompt-category').textContent = isHip ? locationFor(activeId) : '';
+  $('#prompt-category').hidden = !isHip;
+  if (surface) $('#quick-source').href = region.sourceUrl;
+  navigator.sync({ view, activeId, loaded });
   const showingDetail = surface || (isHip && mode !== 'whole');
   $('#prompt-content').hidden = showingDetail; $('#reveal-content').hidden = !showingDetail;
   $('#discovery-panel').setAttribute('aria-labelledby', showingDetail ? 'reveal-title' : 'discovery-title');
@@ -164,7 +170,7 @@ function updateUI() {
   $('#view-status').textContent = mode === 'reveal' ? 'Jaringan sekitar dibuat samar.' : mode === 'isolate' ? 'Jaringan sekitar disembunyikan.' : surface ? 'Jaringan sekitar tetap utuh.' : 'Anatomi otak utuh.';
   $('#scene-label').textContent = surface ? region.name.toUpperCase() : mode === 'reveal' ? 'HIPOKAMPUS DALAM KONTEKS' : mode === 'isolate' ? 'HIPOKAMPUS TANPA JARINGAN SEKITAR' : 'SUDUT PANDANG BEBAS';
   $('#model-caption').textContent = mode === 'whole' ? 'Pilih bagian yang tersedia. Anatomi lain tetap menjadi konteks.' : mode === 'reveal' ? 'Posisinya tetap. Konteksnya diperlihatkan.' : 'Struktur tetap di posisi aslinya.';
-  $('[data-action=isolate]').innerHTML = (mode === 'isolate' ? 'Tampilkan konteks otak' : 'Lihat tanpa jaringan sekitar') + ' <span aria-hidden="true">↗</span>';
+  $('[data-action=isolate]').innerHTML = icon(mode === 'isolate' ? 'show' : 'hide') + (mode === 'isolate' ? 'Tampilkan konteks otak' : 'Lihat tanpa jaringan sekitar');
   $('#anatomy-label-name').textContent = isHip ? 'Hipokampus' : '';
   label.hidden = !isHip || mode === 'whole';
   $('#label-side').textContent = side === 'both' ? 'kiri & kanan' : side === 'left' ? 'kiri' : 'kanan';
@@ -240,20 +246,20 @@ function zoom(factor) {
   moveTo({ position:controls.target.clone().add(offset.normalize().multiplyScalar(distance)), target:controls.target.clone() }, 160);
 }
 function action(name) {
-  if (name === 'about') { clearHover(); $('#about-dialog').showModal(); return; }
+  if (name === 'about') { navigator.close({ restoreFocus: false }); clearHover(); $('#about-dialog').showModal(); return; }
   if (name === 'retry') { location.reload(); return; }
   if (!loaded) return;
+  if (['previous', 'restore', 'home', 'enter', 'deeper', 'reveal'].includes(name)) navigator.close({ restoreFocus: false });
   switch (name) {
     case 'enter': case 'deeper': setView('explorer'); break;
     case 'home': if (view !== 'discovery') setView('discovery'); break;
     case 'reveal': reveal(); break;
     case 'previous': previousSelection(); break;
-    case 'dismiss': activeId = null; focused = false; clearHover(); updateUI(); materialsForState(); $('#home-picker-toggle').focus({ preventScroll:true }); announce('Pilihan ditutup. Pilih bagian lain pada model atau daftar anatomi.'); break;
-    case 'change': $('#home-picker').open = true; $('#home-region').focus({ preventScroll:false }); break;
+    case 'dismiss': activeId = null; focused = false; clearHover(); updateUI(); materialsForState(); $('#anatomy-toggle').focus({ preventScroll:true }); announce('Pilihan ditutup. Pilih bagian lain pada model atau daftar anatomi.'); break;
     case 'restore':
       mode = 'whole'; side = 'both'; focused = false; updateUI(); materialsForState();
       if (overview) moveTo(overview, 450); else frameCurrent();
-      (activeId === HIPPOCAMPUS.id ? $('[data-action=reveal]') : $('#explorer-picker-toggle')).focus({ preventScroll:true });
+      (activeId === HIPPOCAMPUS.id ? $('[data-action=reveal]') : $('#anatomy-toggle')).focus({ preventScroll:true });
       announce('Anatomi utuh dan sudut pandang konteks dipulihkan. Identitas pilihan dipertahankan.'); break;
     case 'isolate':
       if (activeId !== HIPPOCAMPUS.id || mode === 'whole') return;
@@ -272,14 +278,6 @@ function action(name) {
 }
 document.querySelectorAll('[data-action]').forEach((button) => button.addEventListener('click', () => action(button.dataset.action)));
 document.querySelectorAll('[data-side]').forEach((button) => button.addEventListener('click', () => selectSide(button.dataset.side)));
-$('#home-region').addEventListener('change', (event) => {
-  if (event.target.value) chooseRegion(event.target.value);
-  else action('dismiss');
-});
-$('#explorer-region').addEventListener('change', (event) => {
-  if (event.target.value) chooseRegion(event.target.value);
-  else event.target.value = activeId ?? '';
-});
 shell.addEventListener('keydown', (event) => {
   if (!loaded || view === 'transition') return;
   const actions = { '+':'in', '=':'in', '-':'out', '0':'reset', Home:'reset', ArrowLeft:'left', ArrowRight:'right' };
@@ -423,6 +421,7 @@ async function initialize() {
     overview = poseForState(new THREE.Vector3(4, 2.1, 4.5).normalize());
     mode = initialMode; focused = initialFocus;
     wirePointerInteractions();
+    if (params.get('navigator') === 'open') navigator.show($('#anatomy-toggle'));
     renderer.domElement.addEventListener('webglcontextlost', (event) => { event.preventDefault(); loaded = false; controls.enabled = false; clearHover(); $('#failure').hidden = false; announce('Tampilan 3D terhenti. Muat ulang untuk mencoba lagi.'); });
     announce('Anatomi 3D siap. Enam bagian permukaan dapat dipilih; hipokampus tersedia di Explorer.'); invalidate();
   } catch (error) {

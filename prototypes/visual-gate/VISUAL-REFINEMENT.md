@@ -1,5 +1,7 @@
 # Visual UI refinement — review notes
 
+> Historical visual-pass notes. The subsequent [navigation refinement](NAVIGATION-REFINEMENT.md) supersedes control placement and dropdown-navigation descriptions below.
+
 This is a presentation pass on the provisionally accepted anatomy-first prototype. It does not expand anatomy, alter source identities/geometry, replace the exploration model, or integrate production UI. Only this isolated folder changes.
 
 ## Visual changes
