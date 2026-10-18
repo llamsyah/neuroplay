@@ -5,6 +5,7 @@ import { Canvas, useFrame, useThree, type ThreeEvent } from "@react-three/fiber"
 import { CameraControls, CameraControlsImpl, useGLTF, useProgress } from "@react-three/drei";
 import { Box3, Color, MathUtils, Mesh, MeshStandardMaterial, PerspectiveCamera, Sphere, Vector3 } from "three";
 import { isHippocampus, manifest, structureLabel, type SceneStats, type Side, type ViewMode } from "../lib/anatomy";
+import { prepareBrain } from "../lib/brain-model";
 
 type Props = {
   mode: ViewMode;
@@ -38,29 +39,7 @@ function Anatomy(props: Props) {
   const overview = useRef<{ position: Vector3; target: Vector3 } | null>(null);
   const [reducedMotion, setReducedMotion] = useState(false);
 
-  const model = useMemo(() => {
-    const root = scene.clone(true);
-    // One uniform transform for the complete atlas. No per-structure fitting.
-    const sourceBox = new Box3().setFromObject(root);
-    const center = sourceBox.getCenter(new Vector3());
-    const dimensions = sourceBox.getSize(new Vector3());
-    const scale = 3 / Math.max(dimensions.x, dimensions.y, dimensions.z);
-    root.scale.setScalar(scale);
-    root.position.copy(center).multiplyScalar(-scale);
-    root.updateMatrixWorld(true);
-    const meshes: Mesh[] = [];
-    let triangles = 0;
-    root.traverse((object) => {
-      if (!(object instanceof Mesh)) return;
-      object.material = new MeshStandardMaterial({ color: contextColor, roughness: 0.68, metalness: 0 });
-      meshes.push(object);
-      triangles += (object.geometry.index?.count ?? object.geometry.attributes.position.count) / 3;
-    });
-    for (const name of [...manifest.hippocampusNodes.left, ...manifest.hippocampusNodes.right]) {
-      if (!(root.getObjectByName(name) instanceof Mesh)) throw new Error(`Required anatomical node missing: ${name}`);
-    }
-    return { root, meshes, triangles, box: new Box3().setFromObject(root) };
-  }, [scene]);
+  const model = useMemo(() => prepareBrain(scene), [scene]);
 
   const targetBox = useMemo(() => {
     const box = new Box3();

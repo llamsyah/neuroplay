@@ -1,5 +1,5 @@
-import AnatomyLab from "../components/anatomy-lab";
+import Homepage from "../components/homepage";
 
 export default function Page() {
-  return <AnatomyLab />;
+  return <Homepage />;
 }

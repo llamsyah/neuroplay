@@ -1,7 +1,13 @@
 # NEUROPLAY — Experience blueprint
 
 **Type:** Design direction and interaction vocabulary; deliberately not a pixel-perfect design specification.  
-**Status:** Hybrid atmosphere and beginner-first behavior-driven exploration are confirmed. Individual layouts and motion treatments are exploratory.
+**Status:** Hybrid atmosphere and beginner-first behavior-driven exploration are confirmed. The homepage prototype explicitly places a centered headline above a large interactive brain and uses Indonesian-first copy. Other layouts and motion treatments remain exploratory.
+
+## Approved homepage experiment
+
+The homepage is an entrance to exploration: minimal navigation, a short introductory label, a large centered headline, brief supporting copy, then the dominant real 3D brain and a clear route into deeper exploration. Preserve this order on mobile. The light-lavender to deep-violet transition expresses a change of experience, rather than a theme toggle.
+
+This authorization covers one homepage prototype, reusing the existing anatomical model and retaining the Phase 0 workbench. Typography, exact palette, staging, and motion are design candidates for review. Future learning concepts must be clearly identified as unavailable; no curriculum or mini-game implementation is authorized by this experiment.
 
 ## An experience, not a dashboard
 

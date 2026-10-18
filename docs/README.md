@@ -2,7 +2,7 @@
 
 > **Living product direction, not a fixed specification.**  
 > Intended for designers, educators, Codex, and other contributors.  
-> Current context: the Phase 0 anatomical feasibility experiment is complete with a **conditionally feasible** verdict; the experiment's UI is **not** an approved product interface.
+> Current context: Phase 0 remains **conditionally feasible**. A focused homepage experience prototype is now authorized; the technical workbench is retained at `/lab`. Neither prototype establishes a final product interface.
 
 NEUROPLAY is an interactive, beginner-friendly neuroscience playground. It connects everyday experiences, human behavior, and the brain through discovery, playful experiments, accurate 3D anatomy, and progressively deeper explanations.
 
@@ -31,11 +31,14 @@ NEUROPLAY is an interactive, beginner-friendly neuroscience playground. It conne
 3. Real 3D anatomy matters; do not fake biological accuracy. The current segmented model is a **technical prototype**, not a final design endorsement.
 4. Interactive questions, conceptual mini-games, and meaningful feedback belong to the product; it must not become a textbook or conventional multiple-choice course.
 5. **No paid AI dependence for core functionality.** Scientific content should be separately authored, reviewable, and expandable.
-6. The approved visual direction is **exploratory, not a finalized screen design**. The exact homepage, navigation, transitions, animations, and component layout remain open.
+6. The approved visual direction is **exploratory, not a finalized screen design**. Beyond the explicit homepage constraints below, navigation, transitions, animations, and component layout remain open.
+7. For the homepage prototype, the **centered headline and supporting copy must appear above a large, real interactive 3D brain**. This composition is explicitly approved.
+8. Public-facing prototype copy is **Indonesian-first**, accessible and semi-formal. Branding, established scientific terms, and selected experience labels may use English. Developer documentation remains English.
 
 ## Existing repository resources
 
 - Root `README.md`: how to run the current proof of concept.
+- `docs/HOMEPAGE-PROTOTYPE.md`: homepage scope, routes, implementation choices, and verification.
 - `docs/PHASE-0.md`: source model provenance, anatomy and licensing findings, and outstanding risks.
 - `public/models/ATTRIBUTION.md`: actual atlas attribution requirements.
 

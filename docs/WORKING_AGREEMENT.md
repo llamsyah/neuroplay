@@ -39,7 +39,7 @@ Also obey the repository's existing `AGENTS.md` Next.js rules. Do not remove or 
 
 ### C. Open design decisions and hypotheses
 
-The homepage structure, card composition, exact typography/palette, scene transition mechanics, panel arrangement, content format, default navigation, exact mini-game implementations, and expansion schedule are proposals until reviewed.
+The homepage's headline-above-brain composition and Indonesian-first public copy are explicitly approved for the focused homepage experiment. Exact typography/palette, other layout choices, scene transition mechanics, content format, broader navigation, mini-game implementations, and expansion schedule remain proposals until reviewed.
 
 The memory/hippocampus pilot is **a recommended example**, not a mandatory lesson order or a factual claim that one structure explains all memory problems.
 
@@ -93,9 +93,9 @@ For technical research, report exact asset sources, license status, experiments 
 
 ## Current next step
 
-**Do not automatically start Phase 1 based solely on these documents.** Review Phase 0 anatomical quality and constraints with the product owner. Then agree on a small next slice for the hybrid discovery → immersive exploration experience. The Phase 0 technical UI is free to be redesigned, but its proven 3D operations should remain available unless deliberately replaced.
+**The product owner has authorized one focused homepage design and implementation prototype.** Keep the existing anatomical workbench accessible and preserve its verified reveal/isolation behavior. Stop after implementing and validating the homepage; further learning experiences and development phases require review and explicit approval.
 
-A good next design exercise is to sketch or prototype **one journey from a relatable question to the 3D hippocampus reveal and back to a playful learning interaction**, without making the layout permanent before review.
+Review the homepage's visual choices alongside the outstanding Phase 0 anatomical and performance constraints. The prototype is a design candidate, not automatic approval of a complete product interface or a full learning journey.
 
 ## Maintenance guideline
 

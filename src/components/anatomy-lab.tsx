@@ -36,7 +36,7 @@ export default function AnatomyLab() {
     setMode(next);
   }
 
-  return <main className="lab">
+  return <main className="lab" lang="en">
     <header className="topbar">
       <a className="wordmark" href="/" aria-label="Neuroplay home"><span className="brand-mark">n</span>NEUROPLAY<span className="lab-tag">/ LAB</span></a>
       <span className="phase"><span className="status-dot" />PHASE 0 · TECHNICAL FEASIBILITY</span>
@@ -55,7 +55,7 @@ export default function AnatomyLab() {
       </section>
 
       <aside className="panel">
-        <div className="panel-intro"><span className="eyebrow">ANATOMY WORKBENCH</span><h2>One brain.<br />A closer look.</h2><p>Test a real segmented atlas in its original anatomical context.</p></div>
+        <div className="panel-intro"><span className="eyebrow">ANATOMY WORKBENCH</span><h2>One brain.<br /> A closer look.</h2><p>Test a real segmented atlas in its original anatomical context.</p></div>
         <fieldset disabled={!stats}><legend>01 <span>Choose a view</span></legend><div className="view-options">
           {([ ["whole", "Whole brain", "Observe the surrounding anatomy"], ["reveal", "Reveal hippocampus", "Fade context and move closer"], ["isolate", "Isolate hippocampus", "Hide the surrounding structures"] ] as const).map(([value, title, subtitle]) =>
             <button key={value} className={`view-option ${mode === value ? "active" : ""}`} aria-pressed={mode === value} onClick={() => changeMode(value)}><span className="option-indicator" /><span><strong>{title}</strong><small>{subtitle}</small></span><span className="option-arrow">↗</span></button>)}
