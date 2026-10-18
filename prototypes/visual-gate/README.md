@@ -1,5 +1,7 @@
 # NEUROPLAY — free anatomy exploration prototype
 
+**Current iteration:** [Stable spatial UX and discoverability](SPATIAL-UX.md). The navigation refinement remains **unapproved**. This pass fixes the underlying grid, adds a bounded observation surface, protects page scrolling, and adds optional six-region markers and navigator previews. [Separation feasibility](SEPARATION-FEASIBILITY.md) is audited; no displacement control is enabled.
+
 The existing light-lavender Discovery / deep-violet Explorer visual baseline is **provisionally accepted**. This iteration adds anatomy-first free selection for interaction review. It does not authorize a production rebuild, a new visual redesign, behavioral topics, games, or curriculum work.
 
 The subsequent **visual UI refinement pass** preserves that interaction foundation. See [VISUAL-REFINEMENT.md](VISUAL-REFINEMENT.md) for the typography system, shared grid, fixed-size stage, integrated context, control grouping, and visual review boundary. The latest styling awaits product-owner review.
@@ -28,6 +30,8 @@ Useful direct states:
 - `/?view=explorer`: unselected free Explorer.
 - `/?view=explorer&mode=reveal`: preserved hippocampus reveal.
 - `/?view=explorer&mode=isolate`: preserved hippocampus isolation.
+- `/?areas=on`: Discovery with the optional supported-surface markers enabled.
+- `/?view=explorer&selection=precentral-right&areas=on`: selected Explorer with markers enabled.
 - `/?navigator=open`: Discovery with the actual navigator open.
 - `/?view=explorer&selection=precentral-right&navigator=open`: Explorer with current selection marked in the actual navigator.
 - `/storyboard.html`: Discovery → Quick Insight → selected Explorer, plus entry-transition notes.
@@ -51,13 +55,13 @@ The descriptions teach anatomy rather than assigning complex cognition to one st
 
 **Mobile:** tap to select while rotation is off. Vertical page scrolling remains available; pointer cancellation suppresses selection during scrolling. **Aktifkan putar** activates drag/pinch; **Selesai memutar** releases it. The full pointer path and multi-touch participation distinguish rotation/pinch from a tap. Physical touch ergonomics still need review.
 
-Both layouts provide a labeled anatomy menu as a keyboard/touch alternative. The visible **Pilih anatomi** trigger above the stage opens an inline grouped navigator in both environments. It replaces the reading area temporarily and marks the current choice; selection, close, and Escape restore focus to the trigger. Arrow keys rotate while the model container has focus; `+`/`−` zoom and `0` resets framing/orientation for the current state. Controls do not require dragging.
+Both layouts provide a labeled anatomy menu as a keyboard/touch alternative. The visible **Jelajahi anatomi** control opens a compact navigator inside the stable contextual region; mobile also offers **Pilih anatomi** above the stage. It replaces the reading area temporarily and marks the current choice; selection, close, and Escape restore focus to the trigger. Arrow keys rotate while the model container has focus; `+`/`−` zoom and `0` resets framing/orientation for the current state. Controls do not require dragging.
 
 **Jelajahi lebih dalam** carries the selected identity into the deep-violet Explorer. Entry retains the existing camera direction for a picked visible surface and reframes around its context. Choosing an opposite-side region from a menu may turn the camera toward that already-identified region. Camera interpolation follows an orbital path instead of crossing through the brain. One canvas remains mounted within this isolated implementation; production React/router continuity has not been verified.
 
 ## Free navigation inside Explorer
 
-**Pilih anatomi** offers the same six surface selections plus the existing hippocampus group. Switching updates the name, explanation, highlight, and framing. Surface selection restores opaque context and never exposes hippocampus-only isolation controls.
+**Jelajahi anatomi** offers the same six surface selections plus the existing hippocampus group. Switching updates the name, explanation, highlight, and framing. Surface selection restores opaque context and never exposes hippocampus-only isolation controls.
 
 These actions remain distinct:
 
@@ -71,11 +75,11 @@ For **Hipokampus · bagian dalam**, choose **Temukan hipokampus** deliberately, 
 
 ```sh
 node prototypes/visual-gate/audit-anatomy.mjs
-node --test prototypes/visual-gate/interaction.test.mjs prototypes/visual-gate/navigation.test.mjs
+node --test prototypes/visual-gate/interaction.test.mjs prototypes/visual-gate/navigation.test.mjs prototypes/visual-gate/discovery-aid.test.mjs
 node --check prototypes/visual-gate/prototype.js
 ```
 
-Thirteen Node tests passed: the eight existing regressions cover exact source identity/checksum validation (including rejection of a mismatched label), first-visible-hit reachability of all six surface meshes in the real atlas, unsupported occlusion, internal-picking restrictions, drag/pinch/cancel filtering, previous-selection snapshots, opposite-side orbital camera interpolation, and the actual prototype opacity function keeping every mesh opaque during external selection. Five further checks cover navigator grouping, focus/Escape, selection/state changes, loading/Tab behavior, and actual return/reveal/isolate handlers. See the navigation refinement notes for their adapter-based test limits. A separate coarse default-camera ray sample reached the three right-hand supported gyri; this is geometry evidence, not a visual or touch usability assessment.
+Eighteen Node tests passed: the eight existing regressions cover exact source identity/checksum validation (including rejection of a mismatched label), first-visible-hit reachability of all six surface meshes in the real atlas, unsupported occlusion, internal-picking restrictions, drag/pinch/cancel filtering, previous-selection snapshots, opposite-side orbital camera interpolation, and the actual prototype opacity function keeping every mesh opaque during external selection. Six further navigator checks cover navigator grouping, focus/Escape, selection/state changes, loading/Tab behavior, and actual return/reveal/isolate handlers. Four spatial/discovery-aid checks cover exact mesh membership, selection/preview priority, wheel scroll policy and state-independent layout rules. See the spatial UX notes for adapter-based and static-test limits. A separate coarse default-camera ray sample reached the three right-hand supported gyri; this is geometry evidence, not a visual or touch usability assessment.
 
 JavaScript syntax, HTML inline scripts/import map, unique DOM IDs and referenced selector targets, local module paths, and CSS parsing also passed static checks. Production source, original scientific records, and licensing/assets have no changes from this task.
 

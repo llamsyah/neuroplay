@@ -4,6 +4,7 @@
   "scripts": {
     "start": "node serve.mjs",
     "audit": "node audit-anatomy.mjs",
-    "test": "node --test interaction.test.mjs navigation.test.mjs"
+    "test": "node --test interaction.test.mjs navigation.test.mjs discovery-aid.test.mjs",
+    "audit:separation": "node audit-separation.mjs"
   }
 }

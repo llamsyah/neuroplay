@@ -27,18 +27,15 @@
       <button class="back" data-action="home"><span data-icon="back"></span>Kembali ke Discovery</button>
       <div class="return-controls">
         <button class="text-action" data-action="previous" hidden><span data-icon="history"></span>Pilihan sebelumnya</button>
-        <button class="text-action" data-action="restore" hidden><span data-icon="context"></span>Pulihkan otak utuh</button>
       </div>
+      <div class="explorer-intro"><h1>Eksplorasi anatomi</h1><p>Amati letaknya. Kenali bagian-bagiannya.</p></div>
     </nav>
 
     <section class="observation" aria-label="Pengamatan anatomi">
-      <div class="structure-toolbar"><button class="navigator-trigger outline" id="anatomy-toggle" aria-expanded="false" aria-controls="anatomy-navigator" disabled><span data-icon="switch"></span>Pilih anatomi<span data-icon="chevron"></span></button></div>
-      <section class="anatomy-navigator context-area" id="anatomy-navigator" aria-labelledby="navigator-title" hidden>
-        <div class="navigator-heading"><h2 id="navigator-title">Pilih anatomi</h2><button id="navigator-close" class="icon-button" aria-label="Tutup pilihan anatomi"><span data-icon="close"></span></button></div>
-        <p class="navigator-current" id="navigator-current"></p>
-        <div class="anatomy-list" id="anatomy-list"></div>
-        <p class="quiet-note">Pilihan permukaan mencakup girus tertentu, bukan seluruh lobus. Kiri dan kanan mengikuti penamaan atlas.</p>
-      </section>
+      <div class="structure-toolbar">
+        <button class="aid-toggle" id="areas-toggle" data-action="areas" aria-pressed="false" aria-describedby="areas-help" disabled><span data-icon="show"></span><span id="areas-toggle-label">Tampilkan area interaktif</span></button>
+        <button class="mobile-anatomy outline" id="stage-anatomy-toggle" aria-expanded="false" aria-controls="anatomy-navigator" disabled><span data-icon="switch"></span>Pilih anatomi</button>
+      </div>
       <div class="scene" id="scene" tabindex="0" role="group" aria-label="Model anatomi otak interaktif" aria-describedby="gesture keyboard-help">
         <div id="canvas-mount"></div>
         <div class="loading" id="loading" role="status"><span aria-hidden="true"></span><p>Menyiapkan anatomi 3D…</p><small>Model anatomi tersimpan secara lokal.</small></div>
@@ -49,6 +46,19 @@
         <div id="hover-label" class="hover-label" role="tooltip" hidden></div>
       </div>
 
+      <aside class="context-region" aria-label="Informasi dan pilihan anatomi">
+        <div class="context-switch" role="group" aria-label="Isi panel anatomi">
+          <button id="information-toggle" aria-pressed="true" aria-controls="context-information"><span data-icon="info"></span>Informasi</button>
+          <button class="navigator-trigger" id="anatomy-toggle" aria-expanded="false" aria-controls="anatomy-navigator" disabled><span data-icon="switch"></span>Jelajahi anatomi</button>
+        </div>
+        <div class="context-content" id="context-information">
+          <section class="discovery-welcome context-area" id="discovery-welcome" aria-labelledby="welcome-title">
+            <p class="selection-category">Anatomi permukaan</p>
+            <h2 id="welcome-title">Mulai dari satu bagian.</h2>
+            <p class="explanation">Pilih bagian pada otak atau buka Jelajahi anatomi. Enam area permukaan tersedia untuk dikenali.</p>
+            <p class="quiet-note">Gunakan Tampilkan area interaktif untuk menemukannya. Putar model untuk melihat sisi lain.</p>
+            <section class="discovery-entry" aria-label="Mulai eksplorasi"><button class="primary" id="primary" data-action="enter" disabled>Jelajahi otak<span data-icon="deeper"></span></button></section>
+          </section>
       <section class="quick-insight context-area" id="quick-insight" aria-labelledby="quick-title" hidden>
         <button class="quick-close" data-action="dismiss" aria-label="Tutup informasi pilihan"><span data-icon="close"></span></button>
         <p class="selection-category" id="quick-category"></p>
@@ -81,6 +91,15 @@
 
       </section>
 
+        </div>
+      <section class="anatomy-navigator context-area" id="anatomy-navigator" aria-labelledby="navigator-title" hidden>
+        <div class="navigator-heading"><h2 id="navigator-title">Pilih anatomi</h2><button id="navigator-close" class="icon-button" aria-label="Tutup pilihan anatomi"><span data-icon="close"></span></button></div>
+        <p class="navigator-current" id="navigator-current"></p>
+        <div class="anatomy-list" id="anatomy-list"></div>
+        <p class="quiet-note">Kiri dan kanan mengikuti atlas. Pilihan di sisi lain dapat memutar pandangan agar terlihat.</p>
+      </section>
+      </aside>
+
       <div class="observation-tools">
         <p class="gesture" id="gesture"><span id="gesture-copy">Seret untuk memutar. Klik bagian untuk mengenalinya.</span></p>
         <div class="tools-row">
@@ -95,13 +114,14 @@
               <button data-action="reset" aria-label="Atur ulang sudut pandang" title="Atur ulang sudut" disabled><span data-icon="reset"></span></button>
             </div>
           </div>
-
-          <section class="discovery-entry" aria-label="Mulai eksplorasi"><button class="primary" id="primary" data-action="enter" disabled>Jelajahi otak <span data-icon="deeper"></span></button></section>
         </div>
+        <button class="restore-view text-action" data-action="restore" hidden><span data-icon="context"></span>Pulihkan otak utuh</button>
+        <p class="areas-help sr-only" id="areas-help">Penanda hanya menunjukkan enam area permukaan yang dapat dipilih. Warna tidak menunjukkan aktivitas otak.</p>
+        <p class="aid-legend" id="aid-legend" hidden><span><i class="available-key"></i>6 area permukaan</span><span><i class="selected-key"></i>Pilihan Anda</span></p>
       </div>
     </section>
 
-    <span class="sr-only" id="keyboard-help">Gunakan tombol panah untuk memutar, plus dan minus untuk zoom, nol untuk mengatur ulang. Daftar anatomi menyediakan pilihan tanpa perlu menunjuk model. Pada layar sentuh, ketuk untuk memilih; aktifkan putar untuk menyeret model.</span>
+    <span class="sr-only" id="keyboard-help">Gunakan tombol panah untuk memutar, plus dan minus untuk zoom, nol untuk mengatur ulang. Gulir halaman tidak mengubah zoom model. Daftar anatomi menyediakan pilihan tanpa perlu menunjuk model. Pada layar sentuh, ketuk untuk memilih; aktifkan putar untuk menyeret model.</span>
     <p class="sr-only" role="status" id="announcement"></p>
     <footer class="footer"><span>Anatomi: <a href="https://doi.org/10.48539/HBM929.XKCL.339" target="_blank" rel="noreferrer">Browne & Schlehlein / HRA</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a></span></footer>
   </main>

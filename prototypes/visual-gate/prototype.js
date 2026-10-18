@@ -4,6 +4,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { SURFACE_REGIONS, HIPPOCAMPUS, REGION_BY_ID, SURFACE_BY_NODE, validateSelectableAnatomy } from './anatomy.js';
 import { mountIcons, icon } from './icons.js';
 import { createAnatomyNavigator, locationFor } from './navigation.js';
+import { surfaceFeedback, keepWheelForPage } from './discovery-aid.js';
 import { pickSupportedRegion, createGestureGuard, createSelectionHistory, interpolateOrbit } from './interaction.js';
 
 // Isolated prototype only. Source anatomy and production code remain unchanged.
@@ -16,6 +17,7 @@ if (mode !== 'whole') activeId = HIPPOCAMPUS.id;
 if (view !== 'explorer' && activeId === HIPPOCAMPUS.id) activeId = null;
 let side = 'both', focused = view === 'explorer' && Boolean(activeId);
 let loaded = false, touch = false, hovered = null, selectionFromPointer = false;
+let showAreas = params.get('areas') === 'on', previewId = null;
 let manifest, root, meshes, wholeBox, renderer, camera, scene, controls;
 let framePending = false, cameraMotion = null, materialMotion = null;
 let homePose = null, homeSelection = null, overview = null;
@@ -35,7 +37,8 @@ const selected = (mesh) => activeId === HIPPOCAMPUS.id
 mountIcons();
 const navigator = createAnatomyNavigator({
   panel: $('#anatomy-navigator'), list: $('#anatomy-list'), current: $('#navigator-current'),
-  triggers: [$('#anatomy-toggle')], closeButton: $('#navigator-close'), root: document.body,
+  triggers: [$('#anatomy-toggle'), $('#stage-anatomy-toggle')], closeButton: $('#navigator-close'), root: document.body,
+  informationButton: $('#information-toggle'), onPreview: previewRegion,
   onSelect: (id) => chooseRegion(id),
 });
 
@@ -91,19 +94,36 @@ function frameCurrent(duration = 400, faceSelection = false) {
 function invalidate() {
   if (!framePending && renderer) { framePending = true; requestAnimationFrame(render); }
 }
+function previewRegion(id) {
+  previewId = mode === 'whole' && REGION_BY_ID.get(id)?.kind === 'surface' ? id : null;
+  applyColors(); syncDiscoveryAid();
+}
+function syncDiscoveryAid() {
+  const enabled = showAreas && mode === 'whole';
+  $('#areas-toggle').setAttribute('aria-pressed', String(enabled));
+  $('#areas-toggle').disabled = !loaded || mode !== 'whole';
+  $('#areas-toggle-label').textContent = enabled ? 'Sembunyikan penanda area' : 'Tampilkan area interaktif';
+  $('#aid-legend').hidden = !enabled && !previewId;
+}
 function applyColors() {
   if (!loaded) return;
   for (const mesh of meshes) {
-    const isSelected = selected(mesh), isHovered = hovered?.mesh === mesh;
-    const base = view === 'discovery' ? '#c4aebe' : '#baa7c6';
-    const selectionColor = active()?.kind === 'surface' ? (view === 'discovery' ? '#8550cc' : '#b784ee') : '#d6b6ff';
-    const hoverColor = view === 'discovery' ? '#ad84d9' : '#c8a5f1';
-    mesh.material.color.set(isSelected ? selectionColor : isHovered ? hoverColor : base);
-    mesh.material.emissive.set(isSelected || isHovered ? '#8853be' : '#000000');
-    mesh.material.emissiveIntensity = isSelected && mode !== 'whole' ? .18 : isSelected ? .025 : isHovered ? .055 : 0;
+    const feedback = surfaceFeedback({ node:mesh.name, selected:selected(mesh), hovered:hovered?.mesh === mesh,
+      previewId, showAreas, mode, surfaceByNode:SURFACE_BY_NODE });
+    const colors = {
+      base:view === 'discovery' ? '#c4aebe' : '#baa7c6',
+      selected:active()?.kind === 'surface' ? (view === 'discovery' ? '#8550cc' : '#b784ee') : '#d6b6ff',
+      hover:view === 'discovery' ? '#ad84d9' : '#c8a5f1',
+      available:view === 'discovery' ? '#65999b' : '#77b3b5',
+      preview:view === 'discovery' ? '#397e83' : '#80d2d1',
+    };
+    mesh.material.color.set(colors[feedback]);
+    mesh.material.emissive.set(feedback === 'selected' || feedback === 'hover' ? '#8853be' : feedback === 'preview' ? '#367d83' : '#000000');
+    mesh.material.emissiveIntensity = feedback === 'selected' && mode !== 'whole' ? .18 : feedback === 'selected' ? .025 : feedback === 'hover' || feedback === 'preview' ? .055 : 0;
   }
   invalidate();
 }
+
 function materialsForState() {
   clearHover();
   for (const mesh of meshes) {
@@ -144,6 +164,9 @@ function updateUI() {
   $('.discovery-panel').inert = view !== 'explorer';
   $('.explorer-heading').inert = view !== 'explorer';
   $('#quick-insight').hidden = !(view === 'discovery' && surface);
+  $('#discovery-welcome').hidden = view !== 'discovery' || surface;
+  if (mode !== 'whole') { showAreas = false; previewId = null; }
+  syncDiscoveryAid();
   $('#quick-title').textContent = surface ? region.name : '';
   $('#quick-description').textContent = surface ? region.description : '';
   $('#experience-label').textContent = view === 'explorer' ? 'Explorer' : 'Discovery';
@@ -183,7 +206,7 @@ function syncTouch() {
   const button = $('[data-action=touch]');
   button.setAttribute('aria-pressed', String(touch)); button.textContent = touch ? 'Selesai memutar' : 'Aktifkan putar';
   if (controls) controls.enabled = view !== 'transition' && (!narrow.matches || touch);
-  $('#gesture-copy').textContent = narrow.matches ? touch ? 'Seret untuk memutar. Ketuk bagian untuk memilih.' : 'Ketuk bagian untuk memilih. Aktifkan putar untuk menyeret.' : 'Seret untuk memutar. Klik bagian untuk mengenalinya.';
+  $('#gesture-copy').textContent = narrow.matches ? touch ? 'Seret untuk memutar. Ketuk bagian untuk memilih.' : 'Ketuk bagian untuk memilih. Aktifkan putar untuk menyeret.' : 'Seret untuk memutar. Gulir untuk halaman; gunakan + / − untuk zoom.';
 }
 function chooseRegion(id, { fromPointer = false, focusTitle = false } = {}) {
   if (!loaded || !REGION_BY_ID.has(id)) return;
@@ -266,6 +289,10 @@ function action(name) {
       mode = mode === 'isolate' ? 'reveal' : 'isolate'; focused = true;
       updateUI(); materialsForState(); frameCurrent(450);
       announce(mode === 'isolate' ? 'Jaringan sekitar disembunyikan. Hipokampus tetap di posisi aslinya.' : 'Konteks otak ditampilkan kembali.'); break;
+    case 'areas':
+      if (mode !== 'whole') return;
+      showAreas = !showAreas; syncDiscoveryAid(); applyColors();
+      announce(showAreas ? 'Penanda enam area permukaan aktif. Putar untuk melihat sisi lain. Pilihan tetap berwarna violet.' : 'Penanda area interaktif disembunyikan; pilihan tetap dipertahankan.'); break;
     case 'touch': gestures.cancel(); touch = !touch; clearHover(); syncTouch(); break;
     case 'left': rotate(Math.PI/12); break;
     case 'right': rotate(-Math.PI/12); break;
@@ -375,6 +402,7 @@ async function initialize() {
     renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5)); renderer.setClearColor('#000000', 0);
     renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.12;
     mount.append(renderer.domElement); renderer.domElement.setAttribute('aria-hidden', 'true');
+    renderer.domElement.addEventListener('wheel', keepWheelForPage, { capture:true, passive:true });
     scene = new THREE.Scene(); camera = new THREE.PerspectiveCamera(32, 1, .01, 60); camera.position.set(4, 2.1, 4.5);
     controls = new OrbitControls(camera, renderer.domElement); controls.enablePan = false; controls.enableDamping = false;
     controls.minDistance = .7; controls.maxDistance = 16;

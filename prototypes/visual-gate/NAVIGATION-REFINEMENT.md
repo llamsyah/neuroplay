@@ -1,5 +1,7 @@
 # Navigation and information architecture refinement
 
+> Historical navigation-pass record. The subsequent [spatial UX iteration](SPATIAL-UX.md) supersedes its stage positioning, list layout, and restoration-control placement. Navigation remains unapproved.
+
 Status: implemented isolated proposal, awaiting product-owner review. No production rebuild is authorized by this work.
 
 ## Five responsibilities

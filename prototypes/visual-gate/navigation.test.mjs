@@ -24,11 +24,12 @@ class Element {
 }
 function fixture() {
   const document = { createElement() { return new Element(document); } };
-  const [panel, list, current, trigger, closeButton, root] = Array.from({ length: 6 }, () => document.createElement());
-  const selections = [];
-  const controller = createAnatomyNavigator({ panel, list, current, triggers: [trigger], closeButton, root, onSelect: (id) => selections.push(id) });
-  const buttons = () => list.children.flatMap((group) => group.children.slice(1));
-  return { document, panel, list, current, trigger, closeButton, root, selections, controller, buttons };
+  const [panel, list, current, trigger, closeButton, root, informationButton, mobileTrigger] = Array.from({ length: 8 }, () => document.createElement());
+  const selections = [], previews = [];
+  const controller = createAnatomyNavigator({ panel, list, current, triggers: [trigger, mobileTrigger], closeButton, root, informationButton, onSelect: (id) => selections.push(id), onPreview: (id) => previews.push(id) });
+  const descend = (element) => [element, ...element.children.flatMap(descend)];
+  const buttons = () => descend(list).filter((element) => element.dataset.region);
+  return { document, panel, list, current, trigger, closeButton, root, informationButton, mobileTrigger, selections, previews, controller, buttons };
 }
 
 test('navigation exposes only the existing six surface identities and separate internal exception', () => {
@@ -89,6 +90,25 @@ test('navigator cannot open before the source has validated; Tab is not trapped'
   let prevented = false;
   f.root.dispatch('keydown', { key: 'Tab', preventDefault() { prevented = true; } });
   assert.equal(prevented, false); assert.equal(f.controller.isOpen, true);
+});
+
+test('compact side choices retain full names; hover/focus preview never selects; mobile close restores its own trigger', () => {
+  const f = fixture();
+  f.controller.sync({ view:'explorer', activeId:'precentral-right', loaded:true });
+  f.mobileTrigger.dispatch('click');
+  const left = f.buttons().find((button) => button.dataset.region === 'postcentral-left');
+  assert.equal(left.getAttribute('aria-label'), 'Girus postsentral kiri');
+  assert.equal(left.children[0].textContent, 'Kiri');
+  left.dispatch('mouseenter'); assert.equal(f.previews.at(-1), 'postcentral-left');
+  left.dispatch('mouseleave'); assert.equal(f.previews.at(-1), null);
+  left.dispatch('focus'); assert.equal(f.previews.at(-1), 'postcentral-left');
+  left.dispatch('blur'); assert.equal(f.previews.at(-1), null);
+  const hip = f.buttons().find((button) => button.dataset.region === 'hippocampus');
+  hip.dispatch('focus'); assert.equal(f.previews.at(-1), null);
+  assert.deepEqual(f.selections, []);
+  assert.equal(f.informationButton.getAttribute('aria-pressed'), 'false');
+  f.closeButton.dispatch('click'); assert.equal(f.document.activeElement, f.mobileTrigger);
+  assert.equal(f.informationButton.getAttribute('aria-pressed'), 'true');
 });
 
 test('actual prototype handlers distinguish history, restoration, and leaving Explorer', async () => {

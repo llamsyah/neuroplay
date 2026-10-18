@@ -24,12 +24,14 @@ export function locationFor(id, side = 'both') {
 
 // Inline, nonmodal navigation: no backdrop, focus trap, or anatomy-covering sheet.
 // Escape / close / selection return to the opening control. Tab remains native.
-export function createAnatomyNavigator({ panel, list, current, triggers, closeButton, root, onSelect }) {
+export function createAnatomyNavigator({ panel, list, current, triggers, closeButton, root, informationButton, onSelect, onPreview = () => {} }) {
   let opener = null, open = false, lastView = null, lastActiveId = null;
   const buttons = new Map();
   function close({ restoreFocus = true } = {}) {
     open = false; panel.hidden = true; root.dataset.navigator = 'closed';
+    onPreview(null);
     triggers.forEach((trigger) => trigger.setAttribute('aria-expanded', 'false'));
+    informationButton?.setAttribute('aria-pressed', 'true');
     if (restoreFocus && opener?.isConnected && !opener.disabled) opener.focus();
   }
   function sync({ view, activeId, loaded }) {
@@ -41,13 +43,24 @@ export function createAnatomyNavigator({ panel, list, current, triggers, closeBu
       for (const group of groupsFor(view)) {
         const section = list.ownerDocument.createElement('fieldset');
         const heading = list.ownerDocument.createElement('legend'); heading.textContent = group.label; section.append(heading);
+        const surface = group.regions[0].kind === 'surface';
+        if (surface) {
+          const family = list.ownerDocument.createElement('p'); family.className = 'anatomy-family';
+          family.textContent = group.regions[0].name.replace(/ (kiri|kanan)$/, ''); section.append(family);
+        }
+        const pair = list.ownerDocument.createElement('div'); pair.className = 'anatomy-pair'; section.append(pair);
         for (const region of group.regions) {
           const button = list.ownerDocument.createElement('button');
           button.type = 'button'; button.className = 'anatomy-option'; button.dataset.region = region.id;
-          const name = list.ownerDocument.createElement('span'); name.textContent = region.name;
+          button.setAttribute('aria-label', region.name);
+          const name = list.ownerDocument.createElement('span'); name.textContent = surface ? region.name.endsWith(' kiri') ? 'Kiri' : 'Kanan' : region.name;
           button.append(name); button.insertAdjacentHTML('beforeend', icon('check'));
+          button.addEventListener('mouseenter', () => onPreview(surface ? region.id : null));
+          button.addEventListener('focus', () => onPreview(surface ? region.id : null));
+          button.addEventListener('mouseleave', () => { if (list.ownerDocument.activeElement !== button) onPreview(null); });
+          button.addEventListener('blur', () => onPreview(null));
           button.addEventListener('click', () => { onSelect(region.id); close(); });
-          section.append(button); buttons.set(region.id, button);
+          pair.append(button); buttons.set(region.id, button);
         }
         list.append(section);
       }
@@ -61,12 +74,14 @@ export function createAnatomyNavigator({ panel, list, current, triggers, closeBu
   function show(trigger) {
     if (trigger.disabled) return;
     opener = trigger; open = true; panel.hidden = false; root.dataset.navigator = 'open';
+    informationButton?.setAttribute('aria-pressed', 'false');
     triggers.forEach((entry) => entry.setAttribute('aria-expanded', 'true'));
     const target = [...buttons.values()].find((button) => button.getAttribute('aria-pressed') === 'true') ?? buttons.values().next().value;
     target?.focus();
   }
   triggers.forEach((trigger) => trigger.addEventListener('click', () => open ? close() : show(trigger)));
   closeButton.addEventListener('click', () => close());
+  informationButton?.addEventListener('click', () => close({ restoreFocus: false }));
   root.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && open) { event.preventDefault(); close(); }
   });
