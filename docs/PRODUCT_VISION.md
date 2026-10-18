@@ -31,10 +31,11 @@ This is not rote memorization or trivia dressed up with animation.
 
 ## Audience and tone
 
-**Primary:** curious beginners and students who enjoy asking *why does my mind do that?*  
+**Primary:** curious beginners, teenagers, and students who enjoy asking *why does my mind do that?*
+
 **Secondary:** educators, presenters, self-learners, and curious adults who want visually supported explanations.
 
-Do not design only for experts, and do not make the experience childish. The atmosphere should feel **inviting, confident, curious, expressive, and thoughtful**. The interface can be playful while the underlying science remains serious.
+Do not design only for experts, and do not make the experience childish. Aim for the engaging, sophisticated atmosphere of a modern interactive science museum, with clean, understandable interfaces. **Playful in experience. Thoughtful in language. Rigorous in science.** Respect the audience's intelligence; avoid patronizing language, exaggerated encouragement, and empty marketing copy.
 
 The default explanation should work without prerequisite knowledge. Advanced terminology belongs in expandable layers with plain-language definitions.
 
@@ -73,6 +74,8 @@ Make room for surprising design discoveries. New approved decisions replace obso
 The shift between these is **part of the learning journey**, not merely a conventional light/dark settings toggle. Both environments should still feel unmistakably NEUROPLAY. User comfort, sufficient contrast, and reduced-motion preferences take priority over spectacle.
 
 This is a confirmed **creative direction**, not a requirement for a particular animation, exact color palette, or fixed screen division.
+
+Use warm white and soft lavender for discovery, deep violet and related neutrals for exploration, and violet for continuity. Prefer clean modern typography, subtle futuristic details, and comfortable spacing without excessive emptiness. Academic credibility comes from clarity and substance, not oversized italic serif type; a gradient alone does not establish a futuristic experience, and decorative cards do not make it playful. The Phase 0 green workbench aesthetic is not a public product direction.
 
 ## What NEUROPLAY is not
 

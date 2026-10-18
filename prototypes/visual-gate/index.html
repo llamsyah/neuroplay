@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEUROPLAY — Eksplorasi anatomi bebas</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="importmap">{"imports":{"three":"/vendor/three/three.module.js","three/addons/":"/vendor/addons/"}}</script>
+</head>
+<body data-view="discovery" data-mode="whole">
+  <div class="review-strip"><span>Prototipe terisolasi · tinjau tampilan</span><a href="/review.html">Panduan peninjauan ↗</a></div>
+  <main class="experience" id="experience">
+    <a class="skip" href="#scene">Lewati ke model otak</a>
+    <header class="header">
+      <button class="brand" data-action="home" aria-label="NEUROPLAY, kembali ke beranda"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M5 24V12c0-6 9-8 13-1l12 15M30 12v12c0 6-9 8-13 1L5 10"/></svg><span>NEUROPLAY</span></button>
+      <button class="about" data-action="about">Tentang model <span aria-hidden="true">↗</span></button>
+    </header>
+
+    <section class="introduction" aria-labelledby="home-title">
+      <div class="intro-copy">
+      <p class="eyebrow">Jelajahi anatomi otak</p>
+      <h1 id="home-title">Pikiran penuh pertanyaan.<br>Mulai dari <span>otak.</span></h1>
+      <p>Putar otak dan pilih bagian yang ingin Anda kenali.</p>
+      </div>
+    </section>
+    <div class="explorer-heading">
+      <button class="back" data-action="home"><span aria-hidden="true">←</span> Kembali ke beranda</button>
+      <p role="heading" aria-level="1">Eksplorasi anatomi</p>
+    </div>
+
+    <section class="observation" aria-label="Pengamatan anatomi">
+      <div class="scene" id="scene" tabindex="0" role="group" aria-label="Model anatomi otak interaktif" aria-describedby="gesture keyboard-help">
+        <div id="canvas-mount"></div>
+        <div class="loading" id="loading" role="status"><span aria-hidden="true"></span><p>Menyiapkan anatomi 3D…</p><small>Model anatomi tersimpan secara lokal.</small></div>
+        <div class="failure" id="failure" hidden><p>Model 3D belum dapat ditampilkan.</p><button data-action="retry">Coba lagi</button></div>
+        <p class="sr-only" id="scene-label">Sudut pandang bebas</p>
+        <p class="sr-only" id="model-caption">Pilih bagian untuk mengenali anatominya.</p>
+        <div class="anatomy-label" id="anatomy-label" hidden><i aria-hidden="true"></i><span><span id="anatomy-label-name">Hipokampus</span><small id="label-side">kiri & kanan</small></span></div>
+        <div id="hover-label" class="hover-label" role="tooltip" hidden></div>
+      </div>
+
+      <section class="quick-insight context-area" id="quick-insight" aria-labelledby="quick-title" hidden>
+        <button class="quick-close" data-action="dismiss" aria-label="Tutup informasi pilihan">×</button>
+        <h2 id="quick-title" tabindex="-1"></h2>
+        <p id="quick-description" class="explanation"></p>
+        <button class="primary" data-action="deeper">Jelajahi lebih dalam <span aria-hidden="true">↗</span></button>
+        <button class="change-selection text-action" data-action="change">Pilih bagian lain</button>
+      </section>
+
+      <section class="discovery-panel context-area" id="discovery-panel" aria-labelledby="discovery-title">
+        <span class="sr-only" id="chapter-label">Anatomi otak</span>
+        <div id="prompt-content">
+          <h2 id="discovery-title" tabindex="-1">Kenali bagian-bagian otak.</h2>
+          <p class="panel-copy explanation" id="prompt-description">Pilih bagian pada model atau gunakan daftar anatomi. Anda juga dapat melihat letak hipokampus di bagian dalam.</p>
+          <button class="primary" data-action="reveal" disabled>Temukan hipokampus <span aria-hidden="true">↗</span></button>
+          <p class="quiet-note">Beberapa bagian atlas belum dapat dipilih pada prototipe ini.</p>
+        </div>
+        <div id="reveal-content" hidden>
+          <h2 tabindex="-1" id="reveal-title">Hipokampus</h2>
+          <p class="panel-copy explanation" id="region-description"></p>
+          <div id="hip-actions" class="anatomical-actions">
+            <div class="side-selection" role="group" aria-label="Pilih hipokampus"><button data-side="left" aria-pressed="false">Kiri</button><button data-side="both" aria-pressed="true">Keduanya</button><button data-side="right" aria-pressed="false">Kanan</button></div>
+            <button class="outline" data-action="isolate">Lihat tanpa jaringan sekitar <span aria-hidden="true">↗</span></button>
+          </div>
+          <button class="restore text-action" data-action="restore">↶ Kembali ke otak utuh</button>
+          <details class="science-note"><summary>Catatan anatomi dan sumber</summary><div class="disclosure-content"><p id="identity-note"></p><p>Warna menunjukkan pilihan, bukan aktivitas otak. Kiri dan kanan mengikuti penamaan atlas, bukan sisi layar. Atlas ini mencerminkan satu hemisfer dan belum ditinjau secara independen untuk NEUROPLAY.</p><a id="region-source" href="https://pubmed.ncbi.nlm.nih.gov/12359833/" target="_blank" rel="noreferrer">Sumber anatomi ↗</a></div></details>
+        </div>
+        <p class="view-status" id="view-status">Anatomi otak utuh.</p>
+        <div class="region-navigation">
+          <details id="explorer-picker"><summary id="explorer-picker-toggle">Pilih bagian lain</summary><div class="disclosure-content"><label for="explorer-region">Bagian anatomi</label><select id="explorer-region" disabled><option value="" disabled selected>Pilih bagian anatomi…</option></select></div></details>
+          <button class="previous-selection text-action" data-action="previous" hidden>← Pilihan sebelumnya</button>
+        </div>
+      </section>
+
+      <div class="observation-tools">
+        <p class="gesture" id="gesture"><span id="gesture-copy">Seret untuk memutar. Klik bagian untuk mengenalinya.</span></p>
+        <div class="tools-row">
+          <div class="view-controls" aria-label="Kontrol tampilan otak">
+            <button class="touch-control" data-action="touch" aria-pressed="false" disabled>Aktifkan putar</button>
+            <div class="camera-buttons">
+              <button data-action="left" aria-label="Putar ke kiri" title="Putar ke kiri" disabled>↶</button>
+              <button data-action="right" aria-label="Putar ke kanan" title="Putar ke kanan" disabled>↷</button>
+              <span class="divider" aria-hidden="true"></span>
+              <button data-action="out" aria-label="Perkecil otak" title="Perkecil" disabled>−</button>
+              <button data-action="in" aria-label="Perbesar otak" title="Perbesar" disabled>+</button>
+              <button data-action="reset" aria-label="Atur ulang sudut pandang" title="Atur ulang sudut" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9a7.5 7.5 0 1 1 0 6M5 4v5h5"/></svg></button>
+            </div>
+          </div>
+          <details class="home-picker" id="home-picker"><summary id="home-picker-toggle">Pilih dari daftar</summary><div class="disclosure-content"><label for="home-region">Bagian anatomi</label><select id="home-region" disabled><option value="">Belum ada pilihan</option></select></div></details>
+          <section class="discovery-entry" aria-label="Mulai eksplorasi"><button class="primary" id="primary" data-action="enter" disabled>Jelajahi otak <span aria-hidden="true">↗</span></button></section>
+        </div>
+      </div>
+    </section>
+
+    <span class="sr-only" id="keyboard-help">Gunakan tombol panah untuk memutar, plus dan minus untuk zoom, nol untuk mengatur ulang. Daftar anatomi menyediakan pilihan tanpa perlu menunjuk model. Pada layar sentuh, ketuk untuk memilih; aktifkan putar untuk menyeret model.</span>
+    <p class="sr-only" role="status" id="announcement"></p>
+    <footer class="footer"><span>Anatomi: <a href="https://doi.org/10.48539/HBM929.XKCL.339" target="_blank" rel="noreferrer">Browne & Schlehlein / HRA</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a></span><button class="text-action" data-action="about">Tentang atlas ini</button></footer>
+  </main>
+  <dialog id="about-dialog"><form method="dialog"><button class="dialog-close" aria-label="Tutup">×</button></form><h2>Anatomi sebagai dasar.</h2><p>Model asli HRA Brain Male v1.3, Kristen Browne & Heidi Schlehlein / HuBMAP (2023). Geometri dan hubungan antarstruktur dipertahankan. Penyesuaian tampilan meliputi skala seragam, pemusatan seluruh model, material, pencahayaan, dan visibilitas.</p><p>Enam pilihan permukaan dicocokkan dengan nama mesh, label, ID ontologi, dan crosswalk penerbit. Hipokampus memakai enam mesh bernama eksplisit; ID ontologinya belum tersedia. Ini bukan sertifikasi independen atas segmentasi anatomi.</p><p>Atlas ini menggunakan pencerminan satu hemisfer dan bukan pemindaian individu. Transparansi bersifat ilustratif.</p><a href="/models/ATTRIBUTION.md">Atribusi dan batasan lengkap ↗</a><hr><p>Prototipe ini terpisah dari aplikasi utama. Arah visual dan interaksinya masih melalui peninjauan.</p></dialog>
+  <script type="module" src="/prototype.js"></script>
+</body>
+</html>

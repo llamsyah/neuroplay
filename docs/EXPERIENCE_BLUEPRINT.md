@@ -1,17 +1,19 @@
 # NEUROPLAY — Experience blueprint
 
 **Type:** Design direction and interaction vocabulary; deliberately not a pixel-perfect design specification.  
-**Status:** Hybrid atmosphere and beginner-first behavior-driven exploration are confirmed. The homepage prototype explicitly places a centered headline above a large interactive brain and uses Indonesian-first copy. Other layouts and motion treatments remain exploratory.
+**Status:** Hybrid atmosphere, beginner-first behavior-driven exploration, and Indonesian-first UI are confirmed. The implemented homepage is rejected as a product design. A large interactive brain below the headline remains the preferred hierarchy; exact visual and interaction treatments require collaborative design and explicit approval before implementation.
 
-## Approved homepage experiment
+## Homepage direction after the design reset
 
-The homepage is an entrance to exploration: minimal navigation, a short introductory label, a large centered headline, brief supporting copy, then the dominant real 3D brain and a clear route into deeper exploration. Preserve this order on mobile. The light-lavender to deep-violet transition expresses a change of experience, rather than a theme toggle.
+The homepage should be an entrance to an interactive world: minimal navigation, a clear engaging headline, concise supporting copy, then a large, fully visible real interactive brain and an intuitive entry into coherent exploration. Preserve headline-above-brain order on mobile, with comfortable framing and usable controls. The light-lavender to deep-violet transition should express a change of experience, rather than a theme toggle; its treatment remains open.
 
-This authorization covers one homepage prototype, reusing the existing anatomical model and retaining the Phase 0 workbench. Typography, exact palette, staging, and motion are design candidates for review. Future learning concepts must be clearly identified as unavailable; no curriculum or mini-game implementation is authorized by this experiment.
+The rejected implementation's oversized editorial typography, excessive empty space, gradients, navigation, section structure, and inactive question previews must not become the next design baseline. Real model interaction is necessary but does not by itself create a playground. Do not fill the page with inactive topic lists or placeholders. No new homepage, Explorer, curriculum, or mini-game implementation is currently authorized.
 
 ## An experience, not a dashboard
 
 The Phase 0 proof of concept presents a technical anatomy workbench. That is appropriate for testing meshes and visibility, but **not** the desired public-facing learning experience. The future product should lead with questions, visual discovery, and inviting actions rather than exposing all technical controls immediately.
+
+`/lab` may remain accessible for internal technical testing. It is not the approved public Brain Explorer, and future primary exploration actions must not automatically lead there. The future Explorer needs a dedicated immersive experience connected to the homepage, with fresh information architecture, controls, and transitions—not a recolored workbench. Design this flow collaboratively before implementation.
 
 A useful rule: **begin with a reason to care, not with a configuration panel**.
 

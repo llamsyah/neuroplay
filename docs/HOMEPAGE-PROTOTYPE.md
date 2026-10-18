@@ -1,20 +1,22 @@
-# Homepage experience prototype
+# Rejected homepage prototype — retained technical record
 
-18 October 2026. Scope: one local, runnable homepage design experiment. No learning-platform phase or final interface approval is implied.
+18 October 2026. **Status: rejected as a product design.** The implementation remains at `/` for reference and technical reuse, not as a design baseline. No replacement homepage or Explorer implementation is authorized. This record describes retained code and historical verification, not product acceptance.
 
-## Approved constraints
+## Retained principles and technical requirements
 
-- Centered headline and supporting copy **above** a large, genuinely interactive anatomical brain, on desktop and mobile.
+- Preferred hierarchy: clear headline and concise supporting copy **above** a large, fully visible, genuinely interactive anatomical brain on desktop and mobile. Exact visual treatment awaits collaborative design and explicit approval.
 - Indonesian-first, respectful and accessible public copy; English developer documentation.
 - Light lavender/warm white discovery leading into a deep-violet exploration atmosphere.
 - Reuse the existing licensed anatomical asset, preserve verified hippocampus behavior, and keep the Phase 0 workbench accessible.
-- Brief discovery concepts only; no lessons, games, quizzes, accounts, database, AI service, or paid dependency.
+- Meaningful discovery rather than inactive topic lists or placeholder sections. No lessons, games, quizzes, accounts, database, AI service, or paid dependency is authorized by this reset.
 
-## Candidate design
+## Rejected design decisions
 
-Manrope paired with Instrument Serif Italic, a quiet typographic opening, and a continuous lavender-to-violet environment around the model. The model has no enclosing dashboard card, automatic spin, fabricated activity, or invented anatomy. A small editorial question section gives context for future learning without offering unavailable actions.
+The implemented editorial landing page used Manrope with oversized Instrument Serif Italic, excessive empty space, a continuous lavender-to-violet gradient, and inactive neuroscience question previews. The real interactive model functioned primarily as a visual centerpiece. These typography, layout, gradient, section, navigation, and visual decisions are rejected references for future work.
 
-Exact fonts, palette, model framing/lighting, gradient treatment, copy, and navigation remain review candidates. The approved composition and language should survive later revisions unless explicitly superseded.
+The primary exploration action enters the visually disconnected Phase 0 workbench. This flow is rejected. `/lab` may remain for internal technical testing; it is not the approved public Brain Explorer and must not automatically receive future primary exploration actions. A future Explorer needs a dedicated, coherent product experience, not a recolored workbench.
+
+The preferred headline-above-brain hierarchy, Indonesian-first respectful language, violet identity, and real anatomical interaction remain direction. A new visual reference, interaction blueprint, typography, spacing, staging, navigation, and transition design need review before implementation.
 
 ## Routes and code
 
@@ -32,18 +34,20 @@ Both views use the same unmodified `brain-male-v1.3.glb`. The shared helper pres
 
 Self-hosted font files and original SIL OFL 1.1 notices are in `public/fonts/`. There are no added npm dependencies or runtime font/model CDN requests. The atlas attribution and source limitations remain accessible from both experiences.
 
-## Working interactions
+## Retained working interactions
 
-- In-page navigation and a real entry into `/lab`; the workbench logo returns home.
+- Existing in-page navigation and routing into `/lab`; the workbench logo returns home. These links work technically but do not establish an approved navigation model.
 - Desktop drag orbit and wheel zoom; reset and rotate/zoom buttons.
 - Focus the model for arrow-key rotation, `+`/`-` zoom, and `0`/Home reset. Supporting buttons have explicit accessible names.
 - At widths up to 720px, direct manipulation is opt-in through **Putar dengan sentuhan**. The default allows vertical page scrolling over the canvas. **Selesai memutar** restores that default. Buttons and keyboard controls also work when direct manipulation is off.
 - Reduced-motion preferences disable optional CSS motion and camera smoothing. No model auto-rotation occurs.
 - Loading feedback, a failed-model message with retry, visible focus states, a skip link, and expandable provenance details.
 
-The three discovery questions are editorial concepts with visible unavailability labels. They do not link to games or imply completed educational modules. The deeper destination remains an English technical prototype, not a new learner-facing explorer.
+The three inactive discovery questions have visible unavailability labels and do not link to games. Their presence is part of the rejected design, not a pattern to preserve. The deeper destination remains an English technical prototype, not a learner-facing Explorer.
 
-## Validation
+## Historical technical validation
+
+The checks below were recorded for the original implementation. They establish technical behavior at that time, not design approval. No new runtime checks are implied by this documentation reset.
 
 - TypeScript check and source-asset audit passed. The asset checksum, 283 meshes, 656,268 triangles, and six explicit hippocampus components remain unchanged.
 - Production static export passed for `/` and `/lab`.
@@ -52,8 +56,8 @@ The three discovery questions are editorial concepts with visible unavailability
 - An additional 320×740 check preserved the hierarchy and produced no horizontal overflow. Production `/` and `/lab`, both local font files, and the attribution notice returned HTTP 200 with appropriate content types; missing routes returned 404. Homepage → workbench → back navigation preserved the homepage's typography and light palette. No application errors appeared in browser console checks.
 - Review captures: ignored local `artifacts/homepage-desktop.jpg`, `artifacts/homepage-mobile.jpg`, and `artifacts/homepage-full.jpg`.
 
-## Review boundary
+## Current boundary
 
-Review the typography, atmosphere transition, framing, and opt-in mobile interaction treatment. Existing Phase 0 risks still apply: mirrored anatomy, segmentation detail/seams, missing hippocampus ontology IDs, transparency limits, and target-device performance. This experiment does not resolve those scientific or performance questions.
+Preserve the GLB, license/attribution, model-loading and scene utilities, camera controls, and hippocampus reveal/isolation/selection/context functionality. Existing Phase 0 risks still apply: mirrored anatomy, segmentation detail/seams, missing hippocampus ontology IDs, transparency limits, and target-device performance. This experiment does not resolve those scientific or performance questions.
 
-Stop at this homepage. Further experience design, instructional content production, and platform development require explicit approval.
+Stop after the documentation reset. Establish the visual reference and interaction blueprint collaboratively and obtain explicit design approval before any new homepage or Explorer implementation.

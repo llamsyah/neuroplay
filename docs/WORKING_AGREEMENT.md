@@ -7,6 +7,8 @@
 
 The existing Phase 0 interface was built to test anatomy rendering and hippocampus interactions. It is a technical workbench, **not** a final UI design. Preserve its verified technical capabilities as useful foundations, but do not replicate its layout or copy as a product constraint.
 
+The subsequent homepage implementation is **rejected as a product design**. Code retained at `/` is a rejected prototype, not an approved visual reference. `/lab` is for internal technical testing, not the approved public Brain Explorer. Do not automatically reuse the existing homepage-to-workbench primary action.
+
 Read these in order for product work:
 
 1. `docs/README.md` (documentation map)
@@ -28,18 +30,28 @@ Also obey the repository's existing `AGENTS.md` Next.js rules. Do not remove or 
 - Real anatomical context where 3D anatomy is presented as factual.
 - No paid AI requirement for the MVP/core educational experience.
 - Keep design and code adaptable to new approved decisions.
+- Modern interactive science museum identity: playful in experience, thoughtful in language, rigorous in science. Respect beginners and teenagers; avoid childish language, hype, and excessive gamification.
+- Indonesian-first, semi-formal and approachable public UI; selected English branding, mode names, and scientific terms; English developer documentation.
+- Preferred homepage hierarchy: minimal navigation, clear headline, concise support, then a large, fully visible real interactive brain **below the headline** and an intuitive entry into coherent exploration. Exact visual treatment is not approved.
 
 ### B. Proven / observed technical facts
 
 - Current Phase 0 demonstration works with a legally reusable segmented HRA brain atlas under conditions documented in `PHASE-0.md` and the model attribution.
-- Whole-brain display, camera interaction, revealing/fading context, and hippocampus isolation were demonstrated in a browser.
+- Whole-brain display, rotation/zoom and camera controls, hippocampus reveal/isolation/side selection, and restoration of anatomical camera context were demonstrated in a browser. Preserve these capabilities, reusable scene/model-loading utilities, the asset, attribution/license records, and scientific/performance findings.
 - Anatomical quality review, source mirroring trade-offs, mobile performance, and final design remain unresolved.
 
 **Do not describe a technical proof of concept as completed product validation.**
 
-### C. Open design decisions and hypotheses
+### C. Rejected UI decisions
 
-The homepage's headline-above-brain composition and Indonesian-first public copy are explicitly approved for the focused homepage experiment. Exact typography/palette, other layout choices, scene transition mechanics, content format, broader navigation, mini-game implementations, and expansion schedule remain proposals until reviewed.
+- The implemented editorial landing-page treatment: oversized typography, excessive empty space, gradients, section structure, navigation, and inactive neuroscience question previews. These are rejected references, not candidates to preserve by default.
+- Treating the brain primarily as a visual centerpiece instead of building a meaningful interactive experience around it.
+- Presenting the old workbench as the public exploration destination, including the disconnected primary route into `/lab`.
+- Carrying the Phase 0 green technical aesthetic into the product or making a recolored workbench the new Explorer.
+
+### D. Open design decisions and hypotheses
+
+Visual reference, typography and scale, spacing, exact palette, brain framing/lighting, interaction affordances, meaningful homepage content, navigation, and discovery-to-exploration transitions need collaborative review. The dedicated Explorer's information architecture and controls remain open. No replacement homepage or Explorer implementation is authorized until explicit design approval.
 
 The memory/hippocampus pilot is **a recommended example**, not a mandatory lesson order or a factual claim that one structure explains all memory problems.
 
@@ -93,9 +105,9 @@ For technical research, report exact asset sources, license status, experiments 
 
 ## Current next step
 
-**The product owner has authorized one focused homepage design and implementation prototype.** Keep the existing anatomical workbench accessible and preserve its verified reveal/isolation behavior. Stop after implementing and validating the homepage; further learning experiences and development phases require review and explicit approval.
+**Stop after the documentation reset and wait for explicit design approval.** Establish a clearer visual reference and interaction blueprint collaboratively before requesting new implementation work. The previous homepage implementation authorization does not authorize another iteration or an Explorer redesign.
 
-Review the homepage's visual choices alongside the outstanding Phase 0 anatomical and performance constraints. The prototype is a design candidate, not automatic approval of a complete product interface or a full learning journey.
+Keep the rejected homepage code and technical work available without treating their interfaces as approved. Preserve the outstanding Phase 0 anatomical and performance constraints. Do not delete technical assets or working features, reset Git history, or force-push to perform this reset.
 
 ## Maintenance guideline
 

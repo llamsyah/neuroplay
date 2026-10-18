@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node serve.mjs",
+    "audit": "node audit-anatomy.mjs",
+    "test": "node --test interaction.test.mjs"
+  }
+}

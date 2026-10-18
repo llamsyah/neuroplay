@@ -27,6 +27,8 @@ Potential capabilities: whole-brain rotation/zoom, hover/selection, understandab
 
 **Existing evidence:** The Phase 0 proof of concept already loads a real segmented HRA brain atlas and demonstrates reveal/isolate behavior for six meshes representing bilateral hippocampus head/body/tail. The result is **conditionally feasible**, not final product quality. See `PHASE-0.md` for caveats, license, mirrored anatomy, and unvalidated mobile performance.
 
+**Product status:** `/lab` is an internal technical workbench, not an approved user-facing Brain Explorer or an automatic destination for primary exploration actions. Preserve its capabilities as foundations. The public Explorer needs fresh information architecture, intuitive controls, and visual/interaction continuity with the homepage; a recolored workbench is insufficient. Its design and implementation await explicit approval.
+
 ## 3. Anatomy Reveal (foundation → pilot)
 
 **User value:** understand where a structure is located before studying it alone.

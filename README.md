@@ -1,14 +1,14 @@
 # NEUROPLAY
 
-The current experiment is an Indonesian-first homepage with a real interactive brain below its centered headline. It introduces a light-lavender discovery atmosphere and a deep-violet exploration area. This is a reviewable homepage prototype, not the full learning platform.
+**Product UI status:** the current homepage is **rejected as a product design**. Its code remains for reference and technical reuse, not as the design baseline. No new homepage or Brain Explorer implementation is authorized; a visual reference and interaction blueprint need collaborative review and explicit design approval first. Read [the living product documentation](docs/README.md) before product work.
 
-- `/`: homepage with orbit, zoom, reset, keyboard controls, and concept previews.
-- `/lab`: preserved Phase 0 anatomy workbench, including hippocampus reveal/isolation.
-- [Homepage implementation and review notes](docs/HOMEPAGE-PROTOTYPE.md)
+- `/`: retained rejected homepage prototype with working 3D controls and inactive concept previews.
+- `/lab`: internal Phase 0 anatomy workbench, including hippocampus reveal/isolation; not the approved public Brain Explorer.
+- [Rejected homepage implementation and historical validation notes](docs/HOMEPAGE-PROTOTYPE.md)
 
 **Phase 0 verdict: conditionally feasible.** A real human brain atlas loads locally, and its six hippocampus component meshes can be revealed, selected, and isolated without combining or repositioning unrelated anatomy. Anatomical review and device performance validation remain prerequisites for a production decision.
 
-NEUROPLAY's direction is a beginner-friendly neuroscience playground: start with familiar behavior, invite experimentation, and progressively reveal the underlying biology. The eventual experience should feel like an interactive science museum. This repository currently tests the anatomical interaction only; its interface is not an approved product design. Working code and newer user-approved decisions supersede earlier suggestions.
+NEUROPLAY's direction is a beginner-friendly neuroscience playground: start with familiar behavior, invite experimentation, and progressively reveal the underlying biology. The experience should feel like a sophisticated interactive science museum. Working code records current behavior; the latest explicitly approved product decisions govern future design while verified scientific and licensing constraints remain binding.
 
 ## Run
 
@@ -30,9 +30,9 @@ npm start
 
 `npm start` serves the built `out/` directory on loopback. Stop the development server first if it uses the same port. The static export can also be served by a conventional static host; the bundled preview server is for local review.
 
-## Try the experiment
+## Inspect the retained prototypes
 
-On the homepage, use the model controls or focus the model and use arrow keys, `+`/`-`, and `0`. On narrow screens, direct touch manipulation is opt-in so the page remains scrollable. **Jelajahi otak** opens the workbench. The discovery questions are labeled concepts; they do not open lessons or games.
+On the rejected homepage, use the model controls or focus the model and use arrow keys, `+`/`-`, and `0`. On narrow screens, direct touch manipulation is opt-in so the page remains scrollable. The existing **Jelajahi otak** action opens `/lab`; this disconnected product flow is rejected and must not be reused automatically for future primary exploration actions. The inactive discovery questions do not open lessons or games and are not an approved content pattern.
 
 In `/lab`:
 
@@ -54,4 +54,4 @@ The HRA model has mirrored hemispheres, no texture maps, and some visible segmen
 
 `npm run fetch:asset` can restore the GLB from the pinned publisher URL and refuses a checksum mismatch. The original metadata and ontology crosswalk are retained in `docs/sources/`.
 
-No learning modules, quizzes, CMS, authentication, database, AI API, or further learning-platform phase is included. Review the homepage candidate and outstanding Phase 0 findings before authorizing further development.
+No learning modules, quizzes, CMS, authentication, database, AI API, or further learning-platform phase is included. Preserve the technical foundation and outstanding Phase 0 findings; wait for explicit design approval before another homepage or Explorer implementation.

@@ -1,0 +1,2502 @@
+{
+  "sourceCommit": "29888dcc5f32dae28c7a07c41171c822275360c3",
+  "sha256": "2b9ad5b53e40e9f0936da74f7be38d2eed15604e26358c3870a0ea13499b9a35",
+  "crosswalkSha256": "1b1bee7f736445a6f194e2bb49e29a4e3331201a576643cf3386260244401192",
+  "summary": {
+    "meshes": 283,
+    "usableLabelAndOntology": 103,
+    "crosswalkMatchedCandidates": 102,
+    "metadataCrosswalkReview": 1,
+    "missingOrPlaceholderIdentity": 180,
+    "exposedSurfaceSelections": 6,
+    "hippocampusNamedComponents": 6
+  },
+  "meaning": "Source-identity checks, not independent anatomical segmentation certification. Ontology-bearing meshes outside the explicit allowlist are not exposed.",
+  "selectableSurfaceNodes": [
+    {
+      "name": "Allen_precentral_gyrus_L",
+      "label": "precentral gyrus",
+      "ontologyId": "UBERON:0002703",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_precentral_gyrus_L",
+        "ontologyId": "UBERON:0002703",
+        "label": "precentral gyrus"
+      },
+      "regionId": "precentral-left",
+      "evidence": "exact node + GLB label/ontology + pinned publisher crosswalk"
+    },
+    {
+      "name": "Allen_precentral_gyrus_R",
+      "label": "precentral gyrus",
+      "ontologyId": "UBERON:0002703",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_precentral_gyrus_R",
+        "ontologyId": "UBERON:0002703",
+        "label": "precentral gyrus"
+      },
+      "regionId": "precentral-right",
+      "evidence": "exact node + GLB label/ontology + pinned publisher crosswalk"
+    },
+    {
+      "name": "Allen_postcentral_gyrus_L",
+      "label": "postcentral gyrus",
+      "ontologyId": "UBERON:0002581",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_postcentral_gyrus_L",
+        "ontologyId": "UBERON:0002581",
+        "label": "postcentral gyrus"
+      },
+      "regionId": "postcentral-left",
+      "evidence": "exact node + GLB label/ontology + pinned publisher crosswalk"
+    },
+    {
+      "name": "Allen_postcentral_gyrus_R",
+      "label": "postcentral gyrus",
+      "ontologyId": "UBERON:0002581",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_postcentral_gyrus_R",
+        "ontologyId": "UBERON:0002581",
+        "label": "postcentral gyrus"
+      },
+      "regionId": "postcentral-right",
+      "evidence": "exact node + GLB label/ontology + pinned publisher crosswalk"
+    },
+    {
+      "name": "Allen_superior_temporal_gyrus_L",
+      "label": "superior temporal gyrus",
+      "ontologyId": "UBERON:0002769",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_superior_temporal_gyrus_L",
+        "ontologyId": "UBERON:0002769",
+        "label": "superior temporal gyrus"
+      },
+      "regionId": "superior-temporal-left",
+      "evidence": "exact node + GLB label/ontology + pinned publisher crosswalk"
+    },
+    {
+      "name": "Allen_superior_temporal_gyrus_R",
+      "label": "superior temporal gyrus",
+      "ontologyId": "UBERON:0002769",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_superior_temporal_gyrus_R",
+        "ontologyId": "UBERON:0002769",
+        "label": "superior temporal gyrus"
+      },
+      "regionId": "superior-temporal-right",
+      "evidence": "exact node + GLB label/ontology + pinned publisher crosswalk"
+    }
+  ],
+  "hippocampus": {
+    "nodes": [
+      "Allen_head_of_hippocampus_L",
+      "Allen_body_of_hippocampus_L",
+      "Allen_tail_of_hippocampus_L",
+      "Allen_head_of_hippocampus_R",
+      "Allen_body_of_hippocampus_R",
+      "Allen_tail_of_hippocampus_R"
+    ],
+    "evidence": "Explicit names and existing Phase 0 group only; no ontology IDs/crosswalk rows; head/body/tail are not cellular subfields."
+  },
+  "deferredGroupingExamples": [
+    "Cerebellum: paravermis/lateral hemisphere meshes lack IDs, and only the left vermis is crosswalk-labeled. Do not label the whole cerebellum from this evidence.",
+    "Frontal/temporal/parietal lobes: multiple gyri require a reviewed membership map; this allowlist does not claim complete lobe coverage.",
+    "Basilar pons: the node name and ontology label (pontine nuclear group) have different granularity; defer a simple whole-pons label."
+  ],
+  "allMeshIdentityRecords": [
+    {
+      "name": "Allen_olfactory_bulb_L",
+      "label": "olfactory bulb",
+      "ontologyId": "UBERON:0002264",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_olfactory_bulb_L",
+        "ontologyId": "UBERON:0002264",
+        "label": "olfactory bulb"
+      }
+    },
+    {
+      "name": "Allen_anterior_olfactory_nucleus_L",
+      "label": "anterior olfactory nucleus",
+      "ontologyId": "UBERON:0002266",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_anterior_olfactory_nucleus_L",
+        "ontologyId": "UBERON:0002266",
+        "label": "anterior olfactory nucleus"
+      }
+    },
+    {
+      "name": "Allen_piriform_region_L",
+      "label": "piriform cortex",
+      "ontologyId": "UBERON:0004725",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_piriform_region_L",
+        "ontologyId": "UBERON:0004725",
+        "label": "piriform cortex"
+      }
+    },
+    {
+      "name": "Allen_frontal_agranular_insular_cortex_area_Fl_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_temporal_agranular_insular_cortex_area_Tl_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_head_of_caudate_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_body_of_caudate_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_tail_of_caudate_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_putamen_L",
+      "label": "left putamen",
+      "ontologyId": "UBERON:0008884",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_putamen_L",
+        "ontologyId": "UBERON:0008884",
+        "label": "left putamen"
+      }
+    },
+    {
+      "name": "Allen_nucleus_accumbens_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_external_segment_of_globus_pallidus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_internal_segment_of_globus_pallidus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_claustrum_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_basal_forebrain_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_septal_nuclei_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_amygdaloid_complex_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_anterior_amygdaloid_area_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_central_nuclear_group_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_lateral_nucleus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_basolateral_nucleus_basal_nucleus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_basomedial_nucleus_accessory_basal_nucleus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_anterior_cortical_nucleus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_posterior_cortical_nucleus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_medial_nucleus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_amygdalohippocampal_area_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_bed_nucleus_of_stria_terminalis_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_thalamus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_anterior_nuclear_complex_of_thalamus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_lateral_dorsal_nucleus_of_thalamus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_mediodorsal_nucleus_of_thalamus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_reuniens_nucleus_medioventral_nucleus_of_thalamus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_lateral_posterior_nucleus_of_thalamus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_pulvinar_of_thalamus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_ventral_anterior_nucleus_of_thalamus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_ventral_lateral_nucleus_of_thalamus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_ventral_posterior_lateral_nucleus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_ventral_posterior_medial_nucleus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_dorsal_lateral_geniculate_nucleus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_medial_geniculate_nuclei_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_centromedian_nucleus_of_thalamus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_parafascicular_nucleus_of_thalamus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_habenular_nuclei_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_pineal_body_L",
+      "label": "pineal body",
+      "ontologyId": "UBERON:0001905",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_pineal_body_L",
+        "ontologyId": "UBERON:0001905",
+        "label": "pineal body"
+      }
+    },
+    {
+      "name": "Allen_zona_incerta_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_supraoptic_region_of_HTH_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_preoptic_region_of_HTH_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_tuberal_region_of_HTH_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_white_matter_of_forebrain_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_anterior_commissure_L",
+      "label": "anterior commissure",
+      "ontologyId": "UBERON:0000935",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_anterior_commissure_L",
+        "ontologyId": "UBERON:0000935",
+        "label": "anterior commissure"
+      }
+    },
+    {
+      "name": "Allen_corpus_callosum_L",
+      "label": "corpus callosum",
+      "ontologyId": "UBERON:0002336",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_corpus_callosum_L",
+        "ontologyId": "UBERON:0002336",
+        "label": "corpus callosum"
+      }
+    },
+    {
+      "name": "Allen_fornix_L",
+      "label": "fornix of brain",
+      "ontologyId": "UBERON:0000052",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_fornix_L",
+        "ontologyId": "UBERON:0000052",
+        "label": "fornix of brain"
+      }
+    },
+    {
+      "name": "Allen_mammillothalamic_tract_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_optic_tract_L",
+      "label": "optic tract",
+      "ontologyId": "UBERON:0001908",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_optic_tract_L",
+        "ontologyId": "UBERON:0001908",
+        "label": "optic tract"
+      }
+    },
+    {
+      "name": "Allen_anterior_horn_of_lateral_ventricle_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_body_of_lateral_ventricle_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_posterior_horn_of_lateral_ventricle_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_inferior_horn_of_lateral_ventricle_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_third_ventricle_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_cerebellar_vermis_L",
+      "label": "cerebellar vermis",
+      "ontologyId": "UBERON:0004720",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_cerebellar_vermis_L",
+        "ontologyId": "UBERON:0004720",
+        "label": "cerebellar vermis"
+      }
+    },
+    {
+      "name": "Allen_cerebellar_deep_nuclei_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_white_matter_of_hindbrain_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_olfactory_tract_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_precentral_gyrus_L",
+      "label": "precentral gyrus",
+      "ontologyId": "UBERON:0002703",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_precentral_gyrus_L",
+        "ontologyId": "UBERON:0002703",
+        "label": "precentral gyrus"
+      }
+    },
+    {
+      "name": "Allen_superior_frontal_gyrus_L",
+      "label": "superior frontal gyrus",
+      "ontologyId": "UBERON:0002661",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_superior_frontal_gyrus_L",
+        "ontologyId": "UBERON:0002661",
+        "label": "superior frontal gyrus"
+      }
+    },
+    {
+      "name": "Allen_middle_frontal_gyrus_L",
+      "label": "middle frontal gyrus",
+      "ontologyId": "UBERON:0002702",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_middle_frontal_gyrus_L",
+        "ontologyId": "UBERON:0002702",
+        "label": "middle frontal gyrus"
+      }
+    },
+    {
+      "name": "Allen_inferior_frontal_gyrus_triangular_part_L",
+      "label": "triangular part of inferior frontal gyrus",
+      "ontologyId": "UBERON:0002629",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_inferior_frontal_gyrus_triangular_part_L",
+        "ontologyId": "UBERON:0002629",
+        "label": "triangular part of inferior frontal gyrus"
+      }
+    },
+    {
+      "name": "Allen_inferior_frontal_gyrus_opercular_part_L",
+      "label": "opercular part of inferior frontal gyrus",
+      "ontologyId": "UBERON:0002980",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_inferior_frontal_gyrus_opercular_part_L",
+        "ontologyId": "UBERON:0002980",
+        "label": "opercular part of inferior frontal gyrus"
+      }
+    },
+    {
+      "name": "Allen_gyrus_rectus_straight_gyrus_L",
+      "label": "gyrus rectus",
+      "ontologyId": "UBERON:0004671",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_gyrus_rectus_straight_gyrus_L",
+        "ontologyId": "UBERON:0004671",
+        "label": "gyrus rectus"
+      }
+    },
+    {
+      "name": "Allen_medial_orbital_gyrus_L",
+      "label": "medial orbital gyrus",
+      "ontologyId": "UBERON:0002570",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_medial_orbital_gyrus_L",
+        "ontologyId": "UBERON:0002570",
+        "label": "medial orbital gyrus"
+      }
+    },
+    {
+      "name": "Allen_anterior_intermediate_orbital_gyrus_L",
+      "label": "intermediate orbital gyrus",
+      "ontologyId": "UBERON:0002644",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_anterior_intermediate_orbital_gyrus_L",
+        "ontologyId": "UBERON:0002644",
+        "label": "intermediate orbital gyrus"
+      }
+    },
+    {
+      "name": "Allen_posterior_intermediate_orbital_gyrus_L",
+      "label": "intermediate orbital gyrus",
+      "ontologyId": "UBERON:0002644",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_posterior_intermediate_orbital_gyrus_L",
+        "ontologyId": "UBERON:0002644",
+        "label": "intermediate orbital gyrus"
+      }
+    },
+    {
+      "name": "Allen_lateral_orbital_gyrus_L",
+      "label": "lateral orbital gyrus",
+      "ontologyId": "UBERON:0002564",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_lateral_orbital_gyrus_L",
+        "ontologyId": "UBERON:0002564",
+        "label": "lateral orbital gyrus"
+      }
+    },
+    {
+      "name": "Allen_paracentral_lobule_rostral_part_L",
+      "label": "anterior segment of paracentral lobule",
+      "ontologyId": "UBERON:0035932",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_paracentral_lobule_rostral_part_L",
+        "ontologyId": "UBERON:0035932",
+        "label": "anterior segment of paracentral lobule"
+      }
+    },
+    {
+      "name": "Allen_frontal_operculum_L",
+      "label": "frontal operculum",
+      "ontologyId": "UBERON:0002947",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_frontal_operculum_L",
+        "ontologyId": "UBERON:0002947",
+        "label": "frontal operculum"
+      }
+    },
+    {
+      "name": "Allen_postcentral_gyrus_L",
+      "label": "postcentral gyrus",
+      "ontologyId": "UBERON:0002581",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_postcentral_gyrus_L",
+        "ontologyId": "UBERON:0002581",
+        "label": "postcentral gyrus"
+      }
+    },
+    {
+      "name": "Allen_supraparietal_lobule_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_supramarginal_gyrus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_angular_gyrus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_precuneus_L",
+      "label": "precuneus cortex",
+      "ontologyId": "UBERON:0006093",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_precuneus_L",
+        "ontologyId": "UBERON:0006093",
+        "label": "precuneus cortex"
+      }
+    },
+    {
+      "name": "Allen_paracentral_lobule_caudal_part_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_superior_temporal_gyrus_L",
+      "label": "superior temporal gyrus",
+      "ontologyId": "UBERON:0002769",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_superior_temporal_gyrus_L",
+        "ontologyId": "UBERON:0002769",
+        "label": "superior temporal gyrus"
+      }
+    },
+    {
+      "name": "Allen_middle_temporal_gyrus_L",
+      "label": "middle temporal gyrus",
+      "ontologyId": "UBERON:0002771",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_middle_temporal_gyrus_L",
+        "ontologyId": "UBERON:0002771",
+        "label": "middle temporal gyrus"
+      }
+    },
+    {
+      "name": "Allen_inferior_temporal_gyrus_L",
+      "label": "inferior temporal gyrus",
+      "ontologyId": "UBERON:0002751",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_inferior_temporal_gyrus_L",
+        "ontologyId": "UBERON:0002751",
+        "label": "inferior temporal gyrus"
+      }
+    },
+    {
+      "name": "Allen_occipitotemporal_fusiform_gyrus_temporal_part_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_transverse_temporal_gyrus_Heschls_gyrus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_planum_temporale_L",
+      "label": "planum temporale",
+      "ontologyId": "UBERON:0022268",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_planum_temporale_L",
+        "ontologyId": "UBERON:0022268",
+        "label": "planum temporale"
+      }
+    },
+    {
+      "name": "Allen_temporal_pole_L",
+      "label": "temporal pole",
+      "ontologyId": "UBERON:0002576",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_temporal_pole_L",
+        "ontologyId": "UBERON:0002576",
+        "label": "temporal pole"
+      }
+    },
+    {
+      "name": "Allen_planum_polare_L",
+      "label": "planum polare",
+      "ontologyId": "UBERON:0023861",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_planum_polare_L",
+        "ontologyId": "UBERON:0023861",
+        "label": "planum polare"
+      }
+    },
+    {
+      "name": "Allen_occipital_pole_L",
+      "label": "occipital pole",
+      "ontologyId": "UBERON:0002902",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_occipital_pole_L",
+        "ontologyId": "UBERON:0002902",
+        "label": "occipital pole"
+      }
+    },
+    {
+      "name": "Allen_cuneus_L",
+      "label": "cuneus cortex",
+      "ontologyId": "UBERON:0006092",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_cuneus_L",
+        "ontologyId": "UBERON:0006092",
+        "label": "cuneus cortex"
+      }
+    },
+    {
+      "name": "Allen_lingual_gyrus_medial_occipitotemporal_gyrus_L",
+      "label": "lingual gyrus",
+      "ontologyId": "UBERON:0002943",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_lingual_gyrus_medial_occipitotemporal_gyrus_L",
+        "ontologyId": "UBERON:0002943",
+        "label": "lingual gyrus"
+      }
+    },
+    {
+      "name": "Allen_lateral_occipitotemporal_fusiform_gyrus_occipital_part_L",
+      "label": "occipital fusiform gyrus",
+      "ontologyId": "UBERON:0022364",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_lateral_occipitotemporal_fusiform_gyrus_occipital_part_L",
+        "ontologyId": "UBERON:0022364",
+        "label": "occipital fusiform gyrus"
+      }
+    },
+    {
+      "name": "Allen_inferior_occipital_gyrus_L",
+      "label": "inferior occipital gyrus",
+      "ontologyId": "UBERON:0014608",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_inferior_occipital_gyrus_L",
+        "ontologyId": "UBERON:0014608",
+        "label": "inferior occipital gyrus"
+      }
+    },
+    {
+      "name": "Allen_superior_occipital_gyrus_L",
+      "label": "superior occipital gyrus",
+      "ontologyId": "UBERON:0002948",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_superior_occipital_gyrus_L",
+        "ontologyId": "UBERON:0002948",
+        "label": "superior occipital gyrus"
+      }
+    },
+    {
+      "name": "Allen_cingulate_gyrus_rostral_anterior_part_L",
+      "label": "anterior cingulate gyrus",
+      "ontologyId": "UBERON:0002756",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_cingulate_gyrus_rostral_anterior_part_L",
+        "ontologyId": "UBERON:0002756",
+        "label": "anterior cingulate gyrus"
+      }
+    },
+    {
+      "name": "Allen_cingulate_gyrus_caudal_posterior_part_L",
+      "label": "posterior cingulate gyrus",
+      "ontologyId": "UBERON:0002740",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_cingulate_gyrus_caudal_posterior_part_L",
+        "ontologyId": "UBERON:0002740",
+        "label": "posterior cingulate gyrus"
+      }
+    },
+    {
+      "name": "Allen_ingulo_parahippocampal_isthmus_L",
+      "label": "isthmus of cingulate gyrus",
+      "ontologyId": "UBERON:0002738",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_ingulo_parahippocampal_isthmus_L",
+        "ontologyId": "UBERON:0002738",
+        "label": "isthmus of cingulate gyrus"
+      }
+    },
+    {
+      "name": "Allen_subcallosal_gyrus_parolfactory_gyrus_L",
+      "label": "subcallosal area",
+      "ontologyId": "UBERON:0003020",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_subcallosal_gyrus_parolfactory_gyrus_L",
+        "ontologyId": "UBERON:0003020",
+        "label": "subcallosal area"
+      }
+    },
+    {
+      "name": "Allen_anterior_parahippocampal_gyrus_L",
+      "label": "anterior parahippocampal gyrus",
+      "ontologyId": "UBERON:0022383",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_anterior_parahippocampal_gyrus_L",
+        "ontologyId": "UBERON:0022383",
+        "label": "anterior parahippocampal gyrus"
+      }
+    },
+    {
+      "name": "Allen_posterior_parahippocampal_gyrus_L",
+      "label": "posterior parahippocampal gyrus",
+      "ontologyId": "UBERON:0002657",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_posterior_parahippocampal_gyrus_L",
+        "ontologyId": "UBERON:0002657",
+        "label": "posterior parahippocampal gyrus"
+      }
+    },
+    {
+      "name": "Allen_gyrus_ambiens_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_head_of_hippocampus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_body_of_hippocampus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_tail_of_hippocampus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_long_insular_gyri_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_short_insular_gyri_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_limen_insula_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_pretectal_region_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_substantia_nigra_L",
+      "label": "substantia nigra",
+      "ontologyId": "UBERON:0002038",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_substantia_nigra_L",
+        "ontologyId": "UBERON:0002038",
+        "label": "substantia nigra"
+      }
+    },
+    {
+      "name": "Allen_superior_colliculus_L",
+      "label": "superior colliculus",
+      "ontologyId": "UBERON:0001945",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_superior_colliculus_L",
+        "ontologyId": "UBERON:0001945",
+        "label": "superior colliculus"
+      }
+    },
+    {
+      "name": "Allen_cerebral_peduncle_crus_cerebri_L",
+      "label": "cerebral peduncle",
+      "ontologyId": "UBERON:0002623",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_cerebral_peduncle_crus_cerebri_L",
+        "ontologyId": "UBERON:0002623",
+        "label": "cerebral peduncle"
+      }
+    },
+    {
+      "name": "Allen_superior_cerebellar_peduncle_brachium_conjunctivum_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_cerebral_aqueduct_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_paravermis_of_cerebellum_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_lateral_hemisphere_of_cerebellum_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_basilar_part_of_pons_L",
+      "label": "pontine nuclear group",
+      "ontologyId": "UBERON:0002151",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_basilar_part_of_pons_L",
+        "ontologyId": "UBERON:0002151",
+        "label": "pontine nuclear group"
+      }
+    },
+    {
+      "name": "Allen_pontine_tegmentum_L",
+      "label": "pontine tegmentum",
+      "ontologyId": "UBERON:0003023",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_pontine_tegmentum_L",
+        "ontologyId": "UBERON:0003023",
+        "label": "pontine tegmentum"
+      }
+    },
+    {
+      "name": "Allen_pyramidal_part_of_medulla_oblongata_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_tegmentum_of_medulla_oblongata_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_inferior_olive_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_middle_cerebellar_peduncle_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_fourth_ventricle_L",
+      "label": "fourth ventricle",
+      "ontologyId": "UBERON:0002422",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_fourth_ventricle_L",
+        "ontologyId": "UBERON:0002422",
+        "label": "fourth ventricle"
+      }
+    },
+    {
+      "name": "Allen_central_canal_of_medulla_oblongata_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_midline_nuclear_complex_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_lateral_olfactory_gyrus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_parietal_operculum_L",
+      "label": "parietal operculum",
+      "ontologyId": "UBERON:0002911",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_parietal_operculum_L",
+        "ontologyId": "UBERON:0002911",
+        "label": "parietal operculum"
+      }
+    },
+    {
+      "name": "Allen_optic_radiation_L",
+      "label": "optic radiation",
+      "ontologyId": "UBERON:0022264",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_optic_radiation_L",
+        "ontologyId": "UBERON:0022264",
+        "label": "optic radiation"
+      }
+    },
+    {
+      "name": "Allen_posteroventral_putamen_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_atrium_of_lateral_ventricle_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_paracingulate_gyrus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_rostral_gyrus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_frontomarginal_gyrus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_frontal_pole_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_inferior_cerebellar_peduncle_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_perirhinal_gyrus_rostral_part_of_FuGt_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_olfactory_bulb_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_anterior_olfactory_nucleus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_piriform_region_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_frontal_agranular_insular_cortex_area_Fl_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_temporal_agranular_insular_cortex_area_Tl_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_head_of_caudate_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_body_of_caudate_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_tail_of_caudate_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_putamen_R",
+      "label": "right putamen",
+      "ontologyId": "UBERON:0008885",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_putamen_R",
+        "ontologyId": "UBERON:0008885",
+        "label": "right putamen"
+      }
+    },
+    {
+      "name": "Allen_nucleus_accumbens_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_external_segment_of_globus_pallidus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_internal_segment_of_globus_pallidus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_claustrum_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_basal_forebrain_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_septal_nuclei_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_amygdaloid_complex_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_anterior_amygdaloid_area_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_central_nuclear_group_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_lateral_nucleus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_basolateral_nucleus_basal_nucleus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_basomedial_nucleus_accessory_basal_nucleus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_anterior_cortical_nucleus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_posterior_cortical_nucleus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_medial_nucleus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_amygdalohippocampal_area_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_bed_nucleus_of_stria_terminalis_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_thalamus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_anterior_nuclear_complex_of_thalamus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_lateral_dorsal_nucleus_of_thalamus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_mediodorsal_nucleus_of_thalamus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_reuniens_nucleus_medioventral_nucleus_of_thalamus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_lateral_posterior_nucleus_of_thalamus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_pulvinar_of_thalamus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_ventral_anterior_nucleus_of_thalamus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_ventral_lateral_nucleus_of_thalamus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_ventral_posterior_lateral_nucleus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_ventral_posterior_medial_nucleus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_dorsal_lateral_geniculate_nucleus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_medial_geniculate_nuclei_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_centromedian_nucleus_of_thalamus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_parafascicular_nucleus_of_thalamus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_habenular_nuclei_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_pineal_body_R",
+      "label": "pineal body",
+      "ontologyId": "UBERON:0001905",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_pineal_body_R",
+        "ontologyId": "UBERON:0001905",
+        "label": "pineal body"
+      }
+    },
+    {
+      "name": "Allen_zona_incerta_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_supraoptic_region_of_HTH_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_white_matter_of_forebrain_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_anterior_commissure_R",
+      "label": "anterior commissure",
+      "ontologyId": "UBERON:0000935",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_anterior_commissure_R",
+        "ontologyId": "UBERON:0000935",
+        "label": "anterior commissure"
+      }
+    },
+    {
+      "name": "Allen_corpus_callosum_R",
+      "label": "corpus callosum",
+      "ontologyId": "UBERON:0002336",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_corpus_callosum_R",
+        "ontologyId": "UBERON:0002336",
+        "label": "corpus callosum"
+      }
+    },
+    {
+      "name": "Allen_fornix_R",
+      "label": "fornix of brain",
+      "ontologyId": "UBERON:0000052",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_fornix_R",
+        "ontologyId": "UBERON:0000052",
+        "label": "fornix of brain"
+      }
+    },
+    {
+      "name": "Allen_mammillothalamic_tract_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_optic_tract_R",
+      "label": "optic tract",
+      "ontologyId": "UBERON:0001908",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_optic_tract_R",
+        "ontologyId": "UBERON:0001908",
+        "label": "optic tract"
+      }
+    },
+    {
+      "name": "Allen_anterior_horn_of_lateral_ventricle_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_body_of_lateral_ventricle_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_posterior_horn_of_lateral_ventricle_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_inferior_horn_of_lateral_ventricle_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_third_ventricle_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_cerebellar_vermis_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_cerebellar_deep_nuclei_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_white_matter_of_hindbrain_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_olfactory_tract_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_precentral_gyrus_R",
+      "label": "precentral gyrus",
+      "ontologyId": "UBERON:0002703",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_precentral_gyrus_R",
+        "ontologyId": "UBERON:0002703",
+        "label": "precentral gyrus"
+      }
+    },
+    {
+      "name": "Allen_superior_frontal_gyrus_R",
+      "label": "superior frontal gyrus",
+      "ontologyId": "UBERON:0002661",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_superior_frontal_gyrus_R",
+        "ontologyId": "UBERON:0002661",
+        "label": "superior frontal gyrus"
+      }
+    },
+    {
+      "name": "Allen_middle_frontal_gyrus_R",
+      "label": "middle frontal gyrus",
+      "ontologyId": "UBERON:0002702",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_middle_frontal_gyrus_R",
+        "ontologyId": "UBERON:0002702",
+        "label": "middle frontal gyrus"
+      }
+    },
+    {
+      "name": "Allen_inferior_frontal_gyrus_triangular_part_R",
+      "label": "triangular part of inferior frontal gyrus",
+      "ontologyId": "UBERON:0002629",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_inferior_frontal_gyrus_triangular_part_R",
+        "ontologyId": "UBERON:0002629",
+        "label": "triangular part of inferior frontal gyrus"
+      }
+    },
+    {
+      "name": "Allen_inferior_frontal_gyrus_opercular_part_R",
+      "label": "opercular part of inferior frontal gyrus",
+      "ontologyId": "UBERON:0002980",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_inferior_frontal_gyrus_opercular_part_R",
+        "ontologyId": "UBERON:0002980",
+        "label": "opercular part of inferior frontal gyrus"
+      }
+    },
+    {
+      "name": "Allen_gyrus_rectus_straight_gyrus_R",
+      "label": "gyrus rectus",
+      "ontologyId": "UBERON:0004671",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_gyrus_rectus_straight_gyrus_R",
+        "ontologyId": "UBERON:0004671",
+        "label": "gyrus rectus"
+      }
+    },
+    {
+      "name": "Allen_medial_orbital_gyrus_R",
+      "label": "medial orbital gyrus",
+      "ontologyId": "UBERON:0002570",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_medial_orbital_gyrus_R",
+        "ontologyId": "UBERON:0002570",
+        "label": "medial orbital gyrus"
+      }
+    },
+    {
+      "name": "Allen_anterior_intermediate_orbital_gyrus_R",
+      "label": "intermediate orbital gyrus",
+      "ontologyId": "UBERON:0002644",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_anterior_intermediate_orbital_gyrus_R",
+        "ontologyId": "UBERON:0002644",
+        "label": "intermediate orbital gyrus"
+      }
+    },
+    {
+      "name": "Allen_posterior_intermediate_orbital_gyrus_R",
+      "label": "intermediate orbital gyrus",
+      "ontologyId": "UBERON:0002644",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_posterior_intermediate_orbital_gyrus_R",
+        "ontologyId": "UBERON:0002644",
+        "label": "intermediate orbital gyrus"
+      }
+    },
+    {
+      "name": "Allen_lateral_orbital_gyrus_R",
+      "label": "lateral orbital gyrus",
+      "ontologyId": "UBERON:0002564",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_lateral_orbital_gyrus_R",
+        "ontologyId": "UBERON:0002564",
+        "label": "lateral orbital gyrus"
+      }
+    },
+    {
+      "name": "Allen_paracentral_lobule_rostral_part_R",
+      "label": "anterior segment of paracentral lobule",
+      "ontologyId": "UBERON:0035932",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_paracentral_lobule_rostral_part_R",
+        "ontologyId": "UBERON:0035932",
+        "label": "anterior segment of paracentral lobule"
+      }
+    },
+    {
+      "name": "Allen_frontal_operculum_R",
+      "label": "frontal operculum",
+      "ontologyId": "UBERON:0002947",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_frontal_operculum_R",
+        "ontologyId": "UBERON:0002947",
+        "label": "frontal operculum"
+      }
+    },
+    {
+      "name": "Allen_postcentral_gyrus_R",
+      "label": "postcentral gyrus",
+      "ontologyId": "UBERON:0002581",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_postcentral_gyrus_R",
+        "ontologyId": "UBERON:0002581",
+        "label": "postcentral gyrus"
+      }
+    },
+    {
+      "name": "Allen_supraparietal_lobule_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_supramarginal_gyrus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_angular_gyrus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_precuneus_R",
+      "label": "precuneus cortex",
+      "ontologyId": "UBERON:0006093",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_precuneus_R",
+        "ontologyId": "UBERON:0006093",
+        "label": "precuneus cortex"
+      }
+    },
+    {
+      "name": "Allen_paracentral_lobule_caudal_part_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_superior_temporal_gyrus_R",
+      "label": "superior temporal gyrus",
+      "ontologyId": "UBERON:0002769",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_superior_temporal_gyrus_R",
+        "ontologyId": "UBERON:0002769",
+        "label": "superior temporal gyrus"
+      }
+    },
+    {
+      "name": "Allen_middle_temporal_gyrus_R",
+      "label": "middle temporal gyrus",
+      "ontologyId": "UBERON:0002771",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_middle_temporal_gyrus_R",
+        "ontologyId": "UBERON:0002771",
+        "label": "middle temporal gyrus"
+      }
+    },
+    {
+      "name": "Allen_inferior_temporal_gyrus_R",
+      "label": "inferior temporal gyrus",
+      "ontologyId": "UBERON:0002751",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_inferior_temporal_gyrus_R",
+        "ontologyId": "UBERON:0002751",
+        "label": "inferior temporal gyrus"
+      }
+    },
+    {
+      "name": "Allen_occipitotemporal_fusiform_gyrus_temporal_part_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_transverse_temporal_gyrus_Heschls_gyrus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_planum_temporale_R",
+      "label": "planum temporale",
+      "ontologyId": "UBERON:0022268",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_planum_temporale_R",
+        "ontologyId": "UBERON:0022268",
+        "label": "planum temporale"
+      }
+    },
+    {
+      "name": "Allen_temporal_pole_R",
+      "label": "temporal pole",
+      "ontologyId": "UBERON:0002576",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_temporal_pole_R",
+        "ontologyId": "UBERON:0002576",
+        "label": "temporal pole"
+      }
+    },
+    {
+      "name": "Allen_planum_polare_R",
+      "label": "planum polare",
+      "ontologyId": "UBERON:0023861",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_planum_polare_R",
+        "ontologyId": "UBERON:0023861",
+        "label": "planum polare"
+      }
+    },
+    {
+      "name": "Allen_occipital_pole_R",
+      "label": "occipital pole",
+      "ontologyId": "UBERON:0002902",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_occipital_pole_R",
+        "ontologyId": "UBERON:0002902",
+        "label": "occipital pole"
+      }
+    },
+    {
+      "name": "Allen_cuneus_R",
+      "label": "cuneus cortex",
+      "ontologyId": "UBERON:0006092",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_cuneus_R",
+        "ontologyId": "UBERON:0006092",
+        "label": "cuneus cortex"
+      }
+    },
+    {
+      "name": "Allen_lingual_gyrus_medial_occipitotemporal_gyrus_R",
+      "label": "lingual gyrus",
+      "ontologyId": "UBERON:0002943",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_lingual_gyrus_medial_occipitotemporal_gyrus_R",
+        "ontologyId": "UBERON:0002943",
+        "label": "lingual gyrus"
+      }
+    },
+    {
+      "name": "Allen_lateral_occipitotemporal_fusiform_gyrus_occipital_part_R",
+      "label": "occipital fusiform gyrus",
+      "ontologyId": "UBERON:0022364",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_lateral_occipitotemporal_fusiform_gyrus_occipital_part_R",
+        "ontologyId": "UBERON:0022364",
+        "label": "occipital fusiform gyrus"
+      }
+    },
+    {
+      "name": "Allen_inferior_occipital_gyrus_R",
+      "label": "inferior occipital gyrus",
+      "ontologyId": "UBERON:0014608",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_inferior_occipital_gyrus_R",
+        "ontologyId": "UBERON:0014608",
+        "label": "inferior occipital gyrus"
+      }
+    },
+    {
+      "name": "Allen_superior_occipital_gyrus_R",
+      "label": "superior occipital gyrus",
+      "ontologyId": "UBERON:0002948",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_superior_occipital_gyrus_R",
+        "ontologyId": "UBERON:0002948",
+        "label": "superior occipital gyrus"
+      }
+    },
+    {
+      "name": "Allen_cingulate_gyrus_rostral_anterior_part_R",
+      "label": "anterior cingulate gyrus",
+      "ontologyId": "UBERON:0002756",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_cingulate_gyrus_rostral_anterior_part_R",
+        "ontologyId": "UBERON:0002756",
+        "label": "anterior cingulate gyrus"
+      }
+    },
+    {
+      "name": "Allen_cingulate_gyrus_caudal_posterior_part_R",
+      "label": "posterior cingulate gyrus",
+      "ontologyId": "UBERON:0002740",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_cingulate_gyrus_caudal_posterior_part_R",
+        "ontologyId": "UBERON:0002740",
+        "label": "posterior cingulate gyrus"
+      }
+    },
+    {
+      "name": "Allen_ingulo_parahippocampal_isthmus_R",
+      "label": "isthmus of cingulate gyrus",
+      "ontologyId": "UBERON:0002738",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_ingulo_parahippocampal_isthmus_R",
+        "ontologyId": "UBERON:0002738",
+        "label": "isthmus of cingulate gyrus"
+      }
+    },
+    {
+      "name": "Allen_subcallosal_gyrus_parolfactory_gyrus_R",
+      "label": "subcallosal area",
+      "ontologyId": "UBERON:0003020",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_subcallosal_gyrus_parolfactory_gyrus_R",
+        "ontologyId": "UBERON:0003020",
+        "label": "subcallosal area"
+      }
+    },
+    {
+      "name": "Allen_anterior_parahippocampal_gyrus_R",
+      "label": "anterior parahippocampal gyrus",
+      "ontologyId": "UBERON:0022383",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_anterior_parahippocampal_gyrus_R",
+        "ontologyId": "UBERON:0022383",
+        "label": "anterior parahippocampal gyrus"
+      }
+    },
+    {
+      "name": "Allen_posterior_parahippocampal_gyrus_R",
+      "label": "posterior parahippocampal gyrus",
+      "ontologyId": "UBERON:0002657",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_posterior_parahippocampal_gyrus_R",
+        "ontologyId": "UBERON:0002657",
+        "label": "posterior parahippocampal gyrus"
+      }
+    },
+    {
+      "name": "Allen_gyrus_ambiens_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_head_of_hippocampus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_body_of_hippocampus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_tail_of_hippocampus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_long_insular_gyri_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_short_insular_gyri_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_limen_insula_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_pretectal_region_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_red_nucleus_R",
+      "label": "red nucleus",
+      "ontologyId": "UBERON:0001947",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_red_nucleus_R",
+        "ontologyId": "UBERON:0001947",
+        "label": "red nucleus"
+      }
+    },
+    {
+      "name": "Allen_substantia_nigra_R",
+      "label": "substantia nigra",
+      "ontologyId": "UBERON:0002038",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_substantia_nigra_R",
+        "ontologyId": "UBERON:0002038",
+        "label": "substantia nigra"
+      }
+    },
+    {
+      "name": "Allen_superior_colliculus_R",
+      "label": "superior colliculus",
+      "ontologyId": "UBERON:0001945",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_superior_colliculus_R",
+        "ontologyId": "UBERON:0001945",
+        "label": "superior colliculus"
+      }
+    },
+    {
+      "name": "Allen_inferior_colliculus_R",
+      "label": "inferior colliculus",
+      "ontologyId": "UBERON:0001946",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_inferior_colliculus_R",
+        "ontologyId": "UBERON:0001946",
+        "label": "inferior colliculus"
+      }
+    },
+    {
+      "name": "Allen_cerebral_peduncle_crus_cerebri_R",
+      "label": "cerebral peduncle",
+      "ontologyId": "UBERON:0002623",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_cerebral_peduncle_crus_cerebri_R",
+        "ontologyId": "UBERON:0002623",
+        "label": "cerebral peduncle"
+      }
+    },
+    {
+      "name": "Allen_superior_cerebellar_peduncle_brachium_conjunctivum_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_cerebral_aqueduct_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_paravermis_of_cerebellum_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_lateral_hemisphere_of_cerebellum_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_basilar_part_of_pons_R",
+      "label": "pontine nuclear group",
+      "ontologyId": "UBERON:0002151",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_basilar_part_of_pons_R",
+        "ontologyId": "UBERON:0002151",
+        "label": "pontine nuclear group"
+      }
+    },
+    {
+      "name": "Allen_pontine_tegmentum_R",
+      "label": "pontine tegmentum",
+      "ontologyId": "UBERON:0003023",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_pontine_tegmentum_R",
+        "ontologyId": "UBERON:0003023",
+        "label": "pontine tegmentum"
+      }
+    },
+    {
+      "name": "Allen_pyramidal_part_of_medulla_oblongata_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_tegmentum_of_medulla_oblongata_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_inferior_olive_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_inferior_cerebellar_peduncle_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_middle_cerebellar_peduncle_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_fourth_ventricle_R",
+      "label": "fourth ventricle",
+      "ontologyId": "UBERON:0002422",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_fourth_ventricle_R",
+        "ontologyId": "UBERON:0002422",
+        "label": "fourth ventricle"
+      }
+    },
+    {
+      "name": "Allen_central_canal_of_medulla_oblongata_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_midline_nuclear_complex_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_lateral_olfactory_gyrus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_parietal_operculum_R",
+      "label": "parietal operculum",
+      "ontologyId": "UBERON:0002911",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_parietal_operculum_R",
+        "ontologyId": "UBERON:0002911",
+        "label": "parietal operculum"
+      }
+    },
+    {
+      "name": "Allen_optic_radiation_R",
+      "label": "optic radiation",
+      "ontologyId": "UBERON:0022264",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_optic_radiation_R",
+        "ontologyId": "UBERON:0022264",
+        "label": "optic radiation"
+      }
+    },
+    {
+      "name": "Allen_posteroventral_putamen_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_atrium_of_lateral_ventricle_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_paracingulate_gyrus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_rostral_gyrus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_frontomarginal_gyrus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_frontal_pole_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_perirhinal_gyrus_rostral_part_of_FuGt_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_hypothalamus_L",
+      "label": "hypothalamus",
+      "ontologyId": "UBERON:0001898",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_hypothalamus_L",
+        "ontologyId": "UBERON:0001898",
+        "label": "hypothalamus"
+      }
+    },
+    {
+      "name": "Allen_hypothalamus_R",
+      "label": "hypothalamus",
+      "ontologyId": "UBERON:0001898",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_hypothalamus_R",
+        "ontologyId": "UBERON:0001898",
+        "label": "hypothalamus"
+      }
+    },
+    {
+      "name": "Allen_subthalamic_nucleus_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_mammillary_region_of_HTH_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_midbrain_tegmentum_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_tuberal_region_of_HTH_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_preoptic_region_of_HTH_R",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_midbrain_tegmentum_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_red_nucleus_L",
+      "label": "red nucleus",
+      "ontologyId": "UBERON:0001947",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_red_nucleus_L",
+        "ontologyId": "UBERON:0001947",
+        "label": "red nucleus"
+      }
+    },
+    {
+      "name": "Allen_inferior_colliculus_L",
+      "label": "inferior colliculus",
+      "ontologyId": "UBERON:0001946",
+      "classification": "crosswalk-matched-candidate",
+      "crosswalk": {
+        "name": "Allen_inferior_colliculus_L",
+        "ontologyId": "UBERON:0001946",
+        "label": "inferior colliculus"
+      }
+    },
+    {
+      "name": "Allen_mammillary_region_of_HTH_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "Allen_subthalamic_nucleus_L",
+      "label": "-",
+      "ontologyId": "-",
+      "classification": "missing-or-placeholder-identity",
+      "crosswalk": null
+    },
+    {
+      "name": "VH_M_optic_chiasm",
+      "label": "optic chiasma",
+      "ontologyId": "UBERON:0000959",
+      "classification": "metadata-crosswalk-review",
+      "crosswalk": null
+    }
+  ]
+}
