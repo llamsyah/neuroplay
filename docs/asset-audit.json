@@ -1,0 +1,144 @@
+{
+  "checkedOn": "2026-10-18",
+  "sha256": "2b9ad5b53e40e9f0936da74f7be38d2eed15604e26358c3870a0ea13499b9a35",
+  "bytes": 11977312,
+  "sourceCommit": "29888dcc5f32dae28c7a07c41171c822275360c3",
+  "meshCount": 283,
+  "triangleCount": 656268,
+  "vertexCount": 324855,
+  "sourceBounds": {
+    "min": [
+      -0.0682786554,
+      0.7565191,
+      -0.0846749842
+    ],
+    "max": [
+      0.06809858,
+      0.902615,
+      0.08236453
+    ]
+  },
+  "dimensionsInSourceUnits": [
+    0.13637723540000002,
+    0.14609589999999995,
+    0.16703951420000002
+  ],
+  "meshNodesWithTransforms": 0,
+  "textures": 0,
+  "hippocampi": [
+    {
+      "name": "Allen_head_of_hippocampus_L",
+      "side": "left",
+      "triangles": 516,
+      "bounds": {
+        "min": [
+          -0.034153726,
+          0.803905845,
+          0.000883970235
+        ],
+        "max": [
+          -0.009732303,
+          0.81761384,
+          0.016924018
+        ]
+      },
+      "ontologyId": "-"
+    },
+    {
+      "name": "Allen_body_of_hippocampus_L",
+      "side": "left",
+      "triangles": 430,
+      "bounds": {
+        "min": [
+          -0.0344842151,
+          0.8077014,
+          -0.0104687307
+        ],
+        "max": [
+          -0.0153800957,
+          0.8187305,
+          0.003923807
+        ]
+      },
+      "ontologyId": "-"
+    },
+    {
+      "name": "Allen_tail_of_hippocampus_L",
+      "side": "left",
+      "triangles": 524,
+      "bounds": {
+        "min": [
+          -0.033690758,
+          0.8127887,
+          -0.0250376035
+        ],
+        "max": [
+          -0.0103202434,
+          0.828683,
+          -0.008533087
+        ]
+      },
+      "ontologyId": "-"
+    },
+    {
+      "name": "Allen_head_of_hippocampus_R",
+      "side": "right",
+      "triangles": 516,
+      "bounds": {
+        "min": [
+          0.0114132119,
+          0.802690566,
+          -0.0007199669
+        ],
+        "max": [
+          0.0349408537,
+          0.8167079,
+          0.015263929
+        ]
+      },
+      "ontologyId": "-"
+    },
+    {
+      "name": "Allen_body_of_hippocampus_R",
+      "side": "right",
+      "triangles": 430,
+      "bounds": {
+        "min": [
+          0.0154091828,
+          0.806412935,
+          -0.0124135679
+        ],
+        "max": [
+          0.03493635,
+          0.817514,
+          0.00192742341
+        ]
+      },
+      "ontologyId": "-"
+    },
+    {
+      "name": "Allen_tail_of_hippocampus_R",
+      "side": "right",
+      "triangles": 524,
+      "bounds": {
+        "min": [
+          0.009854621,
+          0.8113917,
+          -0.0259978864
+        ],
+        "max": [
+          0.0336243622,
+          0.827837646,
+          -0.010703316
+        ]
+      },
+      "ontologyId": "-"
+    }
+  ],
+  "limitations": [
+    "Bounding-box and laterality checks are coordinate sanity checks, not independent anatomical validation.",
+    "Source metadata states that one hemisphere was mirrored and resized.",
+    "The six hippocampus nodes have no valid ontology ID in the source extras or crosswalk.",
+    "No mesh repair, registration, simplification, or per-structure transform was performed."
+  ]
+}
